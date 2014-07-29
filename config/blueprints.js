@@ -3,7 +3,7 @@ module.exports.blueprints = {
   actions: true,
   rest: true,
   shortcuts: true,
-  prefix: '/api/',
+  prefix: '/api',
   pluralize: false,
   populate: true
 
