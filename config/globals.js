@@ -3,5 +3,9 @@ module.exports.globals = {
 	async: true,
 	sails: true,
 	services: true,
-	models: true
+	models: true,
+
+	baseUrl: process.env.BASE_URL ||  'http://blew.io',
+	host: process.env.DEV_DB_ADAPTER ||  'blew.io',
+	
 };

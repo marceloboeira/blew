@@ -1,5 +1,7 @@
 
 module.exports.routes = {
+  paste: '/p/',
+  user: '/u/',	
 
   '/': {
     view: 'homepage'

@@ -33,7 +33,7 @@ module.exports = {
 
     toJSON: function() {
       var obj = this.toObject();
-      obj.link = "http://blew.io/p/" + obj.id;
+      obj.link = sails.config.globals.baseUrl + sails.config.routes.paste + obj.id;
       return obj;
     }
 	
