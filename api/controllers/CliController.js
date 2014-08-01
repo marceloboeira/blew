@@ -7,6 +7,11 @@
 
 module.exports = {
 	
+	check: function(req, res) {
+		
+		return res.json({isValid:true});
+	},
+
 	paste: function(req, res) {
 			
 		var data = {
