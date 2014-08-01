@@ -16,7 +16,9 @@
         <%- partial ('_partial/navbarTop.ejs') %>              
     </section> 
     <section class="hbox stretch"> 
-        <%- partial ('_partial/navbarLeft.ejs') %>  
+        <% if (req.isAuthenticated()) { %>
+            <%- partial ('_partial/navbarLeft.ejs') %>  
+        <% } %>
         <section id="content"> 
             <%- body %>
         </section> 

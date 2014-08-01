@@ -29,6 +29,12 @@
                     </div> 
                 </div> 
             </form> 
+
+
+            <% if (req.isAuthenticated()) { %>
+
+
+
             <ul class="nav navbar-nav navbar-right m-n hidden-xs nav-user user"> 
                 <li class="hidden-xs"> 
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"> 
@@ -66,7 +72,7 @@
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"> 
                         <span class="thumb-sm avatar pull-left"> 
                             <img src="/images/nouser.png" alt="..."> 
-                        </span> Marcelo Boeira <b class="caret"></b> 
+                        </span> <%= req.user.name %><b class="caret"></b> 
                     </a> 
                     <ul class="dropdown-menu animated flipInX"> 
                         <li>     
@@ -74,7 +80,7 @@
                             <a href="#">Settings</a> 
                         </li> 
                         <li> 
-                            <a href="profile.html">Profile</a> 
+                            <a href="/dashboard">Profile</a> 
                         </li> 
                         <li> 
                             <a href="#"> 
@@ -85,9 +91,10 @@
                         </li> 
                         <li class="divider"></li> 
                         <li> 
-                            <a href="modal.lockme.html" data-toggle="ajaxModal" >Logout</a> 
+                            <a href="/auth/logout"><i class="fa fa-unlock "></i> Logout</a> 
                         </li> 
                     </ul> 
                 </li> 
             </ul> 
-        </header>
+            <% } %>
+</header>

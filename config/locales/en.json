@@ -1,4 +1,5 @@
 {
   "welcome": "Welcome",
+  "hello %s": "Hello %s",
   "projectName": "blew.io"
 }

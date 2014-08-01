@@ -7,6 +7,11 @@ module.exports.routes = {
     view: 'homepage'
   },
 
+  '/u/:id': {
+      controller: 'user',
+      action: 'view'
+  },
+
   '/p/:id': {
       controller: 'paste',
       action: 'view'
