@@ -32,7 +32,8 @@
     "passport-github": "~0.1.5",
     "passport-facebook": "~1.0.3",
     "passport-local": "~1.0.0",
-    "node-uuid": "~1.4.1"
+    "node-uuid": "~1.4.1",
+    "blew": "*"
   },
   "scripts": {
     "start": "node app.js",
