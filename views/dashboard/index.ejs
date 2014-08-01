@@ -1,16 +1,11 @@
 <section class="content"> 
     <div class="row-fluid">
-		<div class="col-xs-4 ">
+		<div class="col-xs-8 ">
 			<br>
-    		<h1 class="h1 font-bold"><i class="fa fa-user "></i> <%= req.user.name %></h1>
+    		<h1 class="h1 font-bold"><i class="fa fa-user "></i> <%= __('Welcome %s', req.user.name) %></h1>
     		<hr>
-			<p><i class="fa fa-code "></i> 53 </p>
-			<p><i class="fa fa-user "></i> @<%= req.user.username %></p>
-			<p><i class="fa fa-calendar "></i> <%= req.user.createdAt %></p>
-			<p><i class="fa fa-calendar "></i> <%= req.user.updatedAt %></p>			
+    		<h1> What now ? </h1>
+    		<p><a class="btn btn-large btn-success" href="/dashboard/cli"> <i class="fa fa-terminal "></i> Install the terminal tool </a> </p>
     	</div>
-    	<div class="col-xs-8 ">
-			
-		</div>
     </div>
 </section> 

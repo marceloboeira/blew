@@ -1,0 +1,22 @@
+<section class="content"> 
+    <div class="row-fluid">
+		<div class="col-xs-8 ">
+			<br>
+			<h3>This is your Command Line Tool key, please DO NOT SHARE IT, or make it public.</h3>
+
+			<div class="input-group">
+			  <span class="input-group-addon"><i class="fa fa-lock "></i></span>
+			  <input type="text" readonly class="form-control input-lg" value="<%= req.user.cliKey  %>">
+			</div>
+
+			<h4> First of all, install blew-cli on your computer: </h4>
+
+			<pre>$ sudo npm install blew -g </pre>
+
+			<h4> after blew finish installing run the code below to authenticate your terminal client.</h4>
+
+			<pre>$ blew auth -k <%= req.user.cliKey  %></pre>
+			
+    	</div>
+    </div>
+</section> 

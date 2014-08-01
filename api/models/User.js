@@ -1,5 +1,6 @@
 
 var bcrypt = require('bcrypt');
+var uuid = require('node-uuid');
 var SALT_WORK_FACTOR = 10;
 
 module.exports = {
@@ -34,6 +35,12 @@ module.exports = {
   		maxLength: 50
   	},
 
+    cliKey: {
+      type: 'string',
+      required: false,
+      unique: true
+    },
+
   	keys: {
       collection: 'key',
       via: 'owner'
@@ -46,32 +53,38 @@ module.exports = {
 
     ghId: {
       type: 'string',
-      required: false 
+      required: false,
+      defaultsTo: null 
     },
 
     ghToken: {
       type: 'string',
-      required: false 
+      required: false,
+      defaultsTo: null
     },
 
     ghSecret: {
       type: 'string',
-      required: false 
+      required: false,
+      defaultsTo: null
     },
 
     fbId: {
       type: 'string',
-      required: false 
+      required: false,
+      defaultsTo: null 
     },
 
     fbToken: {
       type: 'string',
-      required: false 
+      required: false,
+      defaultsTo: null 
     },
 
     fbSecret: {
       type: 'string',
-      required: false 
+      required: false,
+      defaultsTo: null 
     },
 
     verifyPassword: function (password) {
@@ -89,7 +102,8 @@ module.exports = {
   beforeCreate: function (attrs, cb) {
     bcrypt.hash(attrs.password, SALT_WORK_FACTOR, function (err, hash) {
       attrs.password = hash;
-      return cb(err);
+      attrs.cliKey = uuid.v4({msecs: new Date().getTime()}).replace('-','');
+      return cb();    
     });
   },
 

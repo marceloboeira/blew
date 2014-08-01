@@ -70,7 +70,8 @@ var verifyHandler = function (token, tokenSecret, profile, cb) {
                     };
                     
                     User.create(data, function(err, newUser) {
-                       return cb(err, newUser);
+                        if (err) return cb(err);
+                        else return cb(null, newUser);
                     });
                 }
             });
@@ -103,7 +104,8 @@ var verifyHandler = function (token, tokenSecret, profile, cb) {
                     };
                     
                     User.create(data, function(err, newUser) {
-                        return cb(err, newUser);
+                        if (err) return cb(err);
+                        else return cb(null, newUser);
                     });
                 }
             });

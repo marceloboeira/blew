@@ -7,13 +7,13 @@
 
 module.exports = {
 	
-
-
-  /**
-   * `DashboardController.index()`
-   */
   index: function (req, res) {
-    return res.view({user: req.user});
+    return res.view();
+  },
+
+  cli: function (req, res) {
+    return res.view();
   }
+
 };
 
