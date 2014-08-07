@@ -1,16 +1,19 @@
 
 module.exports.routes = {
-  paste: '/p/',
-  user: '/u/',	
-
+  
   '/': {
-    view: 'homepage'
+    view: 'homepage',
   },
 
-  '/u/:id': {
+  user: '/u/',  
+
+  '/u/:username': {
       controller: 'user',
       action: 'view'
   },
+
+
+  paste: '/p/',
 
   '/p/:id': {
       controller: 'paste',

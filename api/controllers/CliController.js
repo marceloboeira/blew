@@ -9,7 +9,8 @@ module.exports = {
 	
 	check: function(req, res) {
 		
-		return res.json({isValid:true});
+		return res.json({ user:req.user,
+						  isValid:true });
 	},
 
 	paste: function(req, res) {

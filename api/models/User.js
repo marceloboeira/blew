@@ -37,7 +37,6 @@ module.exports = {
 
     cliKey: {
       type: 'string',
-      required: false,
       unique: true
     },
 
@@ -49,42 +48,6 @@ module.exports = {
     pastes: {
       collection: 'paste',
       via: 'owner'
-    },
-
-    ghId: {
-      type: 'string',
-      required: false,
-      defaultsTo: null 
-    },
-
-    ghToken: {
-      type: 'string',
-      required: false,
-      defaultsTo: null
-    },
-
-    ghSecret: {
-      type: 'string',
-      required: false,
-      defaultsTo: null
-    },
-
-    fbId: {
-      type: 'string',
-      required: false,
-      defaultsTo: null 
-    },
-
-    fbToken: {
-      type: 'string',
-      required: false,
-      defaultsTo: null 
-    },
-
-    fbSecret: {
-      type: 'string',
-      required: false,
-      defaultsTo: null 
     },
 
     verifyPassword: function (password) {

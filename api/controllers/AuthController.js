@@ -11,7 +11,15 @@ module.exports = {
 	
   logout: function (req, res) {
     req.logout();
-    res.redirect('/');
+    res.redirect('/?good-bye=true');
+  },
+
+  "sign-in": function(req, res) {
+    
+  },
+
+  "sign-up": function(req, res) {
+    
   },
     
   local: function(req, res) {
@@ -24,35 +32,35 @@ module.exports = {
 	      }
 	      req.logIn(user, function(err) {
 	        if (err) res.send(err);
-	        res.redirect('/dashboard/?provider=local');
+	        res.redirect('/dashboard/?p=local');
 	      });
     	})(req, res);
   },
 
   github: function (req, res) {
-  	passport.authenticate('github', { failureRedirect: '/auth/error?provider=github' },
+  	passport.authenticate('github', { failureRedirect: '/auth/error?p=github' },
       function (err, user) {
         req.logIn(user, function (err) {
           if (err) {
             console.log(err);
-            return res.view('500');
+            return res.serverError(err);
           }
-          return res.redirect('/dashboard/?provider=github');                 
+          return res.redirect('/dashboard/?p=github');                 
         });
       })(req, res);
   },
 
   facebook: function (req, res) {
-    passport.authenticate('facebook', { failureRedirect: '/auth/error?provider=facebook', scope: ['email'] },
+    passport.authenticate('facebook', { failureRedirect: '/auth/error?p=facebook', scope: ['email'] },
       function (err, user) {
   	    req.logIn(user, function (err) {
           if (err) {
     	      console.log(err);
-            return res.view('500');
+            return res.serverError(err);
           }
-          return res.redirect('/dashboard/?provider=facebook');	                
+          return res.redirect('/dashboard/?p=facebook');	                
     		});
       })(req, res);
-    }
+  }
 };
 

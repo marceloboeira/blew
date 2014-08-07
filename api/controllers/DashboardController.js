@@ -11,7 +11,7 @@ module.exports = {
     return res.view();
   },
 
-  cli: function (req, res) {
+  "getting-started": function (req, res) {
     return res.view();
   }
 
