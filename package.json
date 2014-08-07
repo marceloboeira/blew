@@ -42,7 +42,7 @@
   "main": "app.js",
   "repository": {
     "type": "git",
-    "url": "git@github.com:vimia/sails-core.git"
+    "url": "git@github.com:vimia/blew.git"
   },
   "author": "marceloboeira",
   "license": "BSD-2-Clause",
@@ -51,6 +51,6 @@
     "node": "0.10.28"
   },
   "bugs": {
-    "url": "https://github.com/vimia/sails-core/issues"
+    "url": "https://github.com/vimia/blew/issues"
   }
 }
