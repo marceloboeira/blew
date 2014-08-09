@@ -11,18 +11,14 @@
     <!--STYLES END-->
   </head>
 
-  <body class="container">
-    <section class="vbox"> 
-        <%- partial ('_partial/navbarTop.ejs') %>              
-    </section> 
-    <section class="hbox stretch"> 
-        <% if (req.isAuthenticated()) { %>
-            <%- partial ('_partial/navbarLeft.ejs') %>  
-        <% } %>
-        <section id="content"> 
-            <%- body %>
-        </section> 
-    </section>
+  <body>
+    <%- partial ('_partial/navbarTop.ejs') %>              
+    <% if (req.isAuthenticated()) { %>
+        <%- partial ('_partial/navbarLeft.ejs') %>  
+    <% } %>
+    <%- body %>
+    
+    
     <!--TEMPLATES-->
     
     <!--TEMPLATES END-->
