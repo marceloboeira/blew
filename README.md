@@ -31,8 +31,23 @@ See below the TODO list.
 * Refactoring
 * Installing
 * Usage -> This file
-* Open-Source
+* Open-Source / License
 
 ### :clap: We Use / Thanks to
 
-* [Commander.js](https://github.com/visionmedia/commander.js/) - Command line tool creator for node;
+#### Front-end
+* [jQuery](http://jquery.com) - Powerful JavaScript framework;
+* [Twitter Bootstrap](http://getbootstrap.com/) - A really cool css/js framework;
+
+#### Back-end
+* [NodeJS](http://nodejs.org/) - JavaScript runtime for easily building fast, scalable network applications;
+* [MongoDB](http://mongodb.org/) - An open-source NoSQL database;
+* [SailsJS](http://sailsjs.org/) - Command line tool creator for node;
+* [SailsCore](https://github.com/vimia/sails-core) - Simple Core with Sails JS;
+
+
+#### Tools
+* [GitHub](http://github.com/) - Social coding :octocat:;
+* [NewRelic](http://newrelic.com/) - Server-side app monitor;
+* [Heroku](http://heroku.com/) - Server hosting;
+
