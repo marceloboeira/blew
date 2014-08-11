@@ -59,6 +59,12 @@ module.exports = {
       this.save(function(err, u) {
         return cb(err,u);
       });
+    },
+
+    toJSON: function() {
+      var obj = this.toObject();
+      obj.link = sails.config.globals.baseUrl + sails.config.routes.user + obj.username;
+      return obj;
     }
   },
 

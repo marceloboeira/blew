@@ -15,11 +15,11 @@ module.exports = {
   },
 
   "sign-in": function(req, res) {
-    
+    return res.redirect('/');
   },
 
   "sign-up": function(req, res) {
-    
+    return res.redirect('/');
   },
     
   local: function(req, res) {
