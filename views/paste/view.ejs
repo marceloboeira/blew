@@ -1,20 +1,17 @@
-<section class="content"> 
-    <div class="row-fluid">
+<div class="container"> 
+    <div class="row">
 		<div class="col-xs-8 ">
 			<div class="code"> 
 				<pre><%= paste.content %></pre>
 			</div>
 		</div>
 		<div class="col-xs-4 ">
-			<br>
-    		<h1 class="h1 font-bold"><i class="fa fa-file-code-o "></i> <%= paste.name %></h1>
+    		<h1><i class="fa fa-file-code-o "></i> <%= paste.name %></h1>
     		<hr>
 			<p><i class="fa fa-code "></i> <%= paste.language %></p>
-			<p><i class="fa fa-user "></i> <%= paste.owner.name %></p>
+			<p><i class="fa fa-user "></i> <a href="<%= paste.owner.toJSON().link %>"><%= paste.owner.name %> </a></p>
 			<p><i class="fa fa-calendar "></i> <%= paste.createdAt %></p>
 			<p><i class="fa fa-calendar "></i> <%= paste.updatedAt %></p>
-			
     	</div>
     </div>
-	
-</section> 
+</div> 

@@ -1,8 +1,14 @@
-<section class="content"> 
-	<br>
-    <div class="row-fluid">
+<div class="container">
+	<div class="row">
 		<div class="col-xs-8 ">
 			<h1 class="h1 font-bold"><i class="fa fa-user "></i> <%= user.name %></h1>
+			<hr>
+			<ul>
+			<% user.pastes.forEach(function(paste) { %>
+			    <li><a href="<%= paste.toJSON().link %>"> <%= paste.name %> </a></li>
+			<% }); %>
+			</ul>				
+
 		</div>
     </div>
-</section> 
+</div> 
