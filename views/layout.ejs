@@ -12,12 +12,15 @@
   </head>
 
   <body>
-    <%- partial ('_partial/navbarTop.ejs') %>              
-    <% if (req.isAuthenticated()) { %>
-        <%- partial ('_partial/navbarLeft.ejs') %>  
-    <% } %>
-    <%- body %>
-    
+    <header>
+      <%- partial ('_partial/header.ejs') %>
+    </header>
+    <section>
+      <%- body %>
+    </section>
+    <footer>
+      <%- partial ('_partial/footer.ejs') %>
+    </footer>
     
     <!--TEMPLATES-->
     
