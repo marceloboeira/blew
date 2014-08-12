@@ -40,14 +40,19 @@ See below the TODO list.
 * [Twitter Bootstrap](http://getbootstrap.com/) - A really cool css/js framework;
 
 #### Back-end
+
 * [NodeJS](http://nodejs.org/) - JavaScript runtime for easily building fast, scalable network applications;
+	* [SailsJS](http://sailsjs.org/) - Realtime MVC framework for node;
+		* [SailsCore](https://github.com/vimia/sails-core) - Simple Core with Sails JS;
+	* [Passport.js](http://passportjs.org/) - An OAuth adapter;
+	* [bcrypt](https://github.com/ncb000gt/node.bcrypt.js) - Package to create hashs;
 * [MongoDB](http://mongodb.org/) - An open-source NoSQL database;
-* [SailsJS](http://sailsjs.org/) - Command line tool creator for node;
-* [SailsCore](https://github.com/vimia/sails-core) - Simple Core with Sails JS;
+
 
 
 #### Tools
 * [GitHub](http://github.com/) - Social coding :octocat:;
 * [NewRelic](http://newrelic.com/) - Server-side app monitor;
 * [Heroku](http://heroku.com/) - Server hosting;
+* [CloudFlare](http://cloudflare.com/) - DNS Manager;
 
