@@ -1,7 +1,6 @@
 var passport = require('passport'), 
     LocalStrategy = require('passport-local').Strategy, 
-    GitHubStrategy = require('passport-github').Strategy, 
-    FacebookStrategy = require('passport-facebook').Strategy;
+    GitHubStrategy = require('passport-github').Strategy;
 
 
 function findById(id, cb) {
@@ -57,11 +56,9 @@ var verifyHandler = function (token, tokenSecret, profile, cb) {
                     var data = {"name": profile.displayName,
                                 "username": profile.id,
                                 "email": profile.emails[0].value,
-                                "password": profile.id};
-                    
+                                "password": profile.id};                    
                     User.create(data, function(err, newUser) {
                         if (err) return cb(err);
-                        
                         return cb(null, newUser);
                     });
                 }
@@ -83,5 +80,4 @@ passport.deserializeUser(function (user, cb) {
 });
 
 passport.use(new GitHubStrategy(sails.config.passport.github, verifyHandler));
-passport.use(new FacebookStrategy(sails.config.passport.facebook, verifyHandler));
 passport.use(new LocalStrategy(verifyHandlerLocal));

@@ -48,19 +48,6 @@ module.exports = {
           return res.redirect('/dashboard/?p=github');                 
         });
       })(req, res);
-  },
-
-  facebook: function (req, res) {
-    passport.authenticate('facebook', { failureRedirect: '/auth/error?p=facebook', scope: ['email'] },
-      function (err, user) {
-  	    req.logIn(user, function (err) {
-          if (err) {
-    	      console.log(err);
-            return res.serverError(err);
-          }
-          return res.redirect('/dashboard/?p=facebook');	                
-    		});
-      })(req, res);
   }
 };
 
