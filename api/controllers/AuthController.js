@@ -9,30 +9,30 @@ var passport = require('passport');
 
 module.exports = {
 	
-  logout: function (req, res) {
-    req.logout();
-    res.redirect('/?good-bye=true');
+  "sign-up": function(req, res) {
+    return res.view();
   },
 
   "sign-in": function(req, res) {
-    return res.redirect('/');
+    return res.view();
   },
 
-  "sign-up": function(req, res) {
-    return res.redirect('/');
+  "sign-out": function (req, res) {
+    req.logout();
+    return res.redirect('/?good-bye=true');
   },
     
   local: function(req, res) {
     passport.authenticate('local', 
     	function(err, user, info) {
-	    	if ((err) || (!user)) {
-	         res.send({message: info.message});
-	         return res.send(err);
-
-	      }
+	    	if (err)
+	         return res.serverError(err);
+        if (!user)
+          return res.view("auth/sign-in",{error:info.message});
+        
 	      req.logIn(user, function(err) {
-	        if (err) res.send(err);
-	        res.redirect('/dashboard/?p=local');
+	        if (err) return res.serverError(err); 
+	        return res.redirect('/dashboard/?p=local');
 	      });
     	})(req, res);
   },

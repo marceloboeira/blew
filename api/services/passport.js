@@ -20,22 +20,29 @@ function findByEmail(e, cb) {
   });
 }    
 
+function verifyPassword(user, password, cb) {
+    return (user.verifyPassword(password)) 
+        ? cb(null, user, {message: 'Ok'})
+        : cb(null, null, {message: 'Invalid Password'});
+}
+
 var verifyHandlerLocal = function (username, password, cb) {
     process.nextTick(function () {
       findByUsername(username, function (err, user) {
+        console.log('heref');
         if (err) return cb(null, err);
-        if (!user) {
-          return cb(null, false, {message: 'Unknown credentials'});
+        if (user == undefined) {
+            findByEmail(username, function(err, user) {
+                if (err) return cb(null, err);
+                if (user == undefined) {
+                    return cb(null, false, {message: 'Unknown credentials'});
+                }
+                return verifyPassword(user, password, cb);
+            }); 
         }
-        else {
-            if (user.verifyPassword(password)) {
-                return cb(null, user, {message: 'Ok'});
-            }
-            else {
-                return cb(null, null, {message: 'Invalid Password'});
-            } 
-
-        }
+        else 
+            return verifyPassword(user, password, cb);
+        
       })
     });
 }
@@ -49,7 +56,7 @@ var verifyHandler = function (token, tokenSecret, profile, cb) {
 
             findByEmail(profile.emails[0].value, function(err, user){
                 if (err) return cb(err);
-                if (user) {
+                if (typeof user !== undefined) {
                     return cb(err,user);
                 }
                 else {

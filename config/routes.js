@@ -18,5 +18,15 @@ module.exports.routes = {
   '/p/:id': {
       controller: 'paste',
       action: 'view'
-  }
+  },
+
+  'get /auth/sign-in': {
+      controller: 'auth',
+      action: 'sign-in'
+  },
+
+  'post /auth/sign-in': {
+      controller: 'auth',
+      action: 'local'
+  },
 };
