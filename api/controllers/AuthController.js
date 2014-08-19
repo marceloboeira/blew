@@ -8,9 +8,25 @@
 var passport = require('passport');
 
 module.exports = {
-	
+  
   "sign-up": function(req, res) {
     return res.view();
+  },
+
+  "sign-up-post": function(req, res) {
+      var data = {name: req.param('name'),
+                  email: req.param('email'),
+          }
+
+      User.create(data, function (err, user) {
+        if (err) {
+          req.flash('danger','Error 101020300');  
+          return res.redirect('/auth/sign-up');
+        }
+        return res.redirect('/auth/sign-up/ok');
+
+      });
+
   },
 
   "sign-in": function(req, res) {

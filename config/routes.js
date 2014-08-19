@@ -29,4 +29,15 @@ module.exports.routes = {
       controller: 'auth',
       action: 'local'
   },
+
+  'get /auth/sign-up': {
+      controller: 'auth',
+      action: 'sign-up'
+  },
+
+  'post /auth/sign-up': {
+      controller: 'auth',
+      action: 'sign-up-post'
+  },
+
 };
