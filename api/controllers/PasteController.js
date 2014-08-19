@@ -7,7 +7,10 @@ module.exports = {
 		Paste.findOne(id)
 			 .populate('owner')
 			 .exec(function(err, paste){
-			 	if (err) return res.notFound();
+			 	
+			 	if (err || !paste) return res.notFound();
+
+
 				return res.view({ paste: paste });
 		});
 		
