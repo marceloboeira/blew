@@ -1,17 +1,18 @@
 <div class="container"> 
-    <div class="row">
-		<div class="col-xs-8 ">
-			<div class="code"> 
-				<pre><%= paste.content %></pre>
-			</div>
-		</div>
-		<div class="col-xs-4 ">
+	<div class="row">
+		<div class="container ">
     		<h1><i class="fa fa-file-code-o "></i> <%= paste.name %></h1>
     		<hr>
-			<p><i class="fa fa-code "></i> <%= paste.language %></p>
-			<p><i class="fa fa-user "></i> <a href="<%= paste.owner.toJSON().link %>"><%= paste.owner.name %> </a></p>
-			<p><i class="fa fa-calendar "></i> <%= paste.createdAt %></p>
-			<p><i class="fa fa-calendar "></i> <%= paste.updatedAt %></p>
+			<i class="fa fa-code "></i> <%= paste.language %> |
+			<i class="fa fa-user "></i> <a href="<%= paste.owner.toJSON().link %>"><%= paste.owner.name %> </a> |
+			<i class="fa fa-calendar "></i> <%= paste.createdAt %> |
+			<i class="fa fa-calendar "></i> <%= paste.updatedAt %> 
+			<hr>
     	</div>
     </div>
+	<div class="row">
+		<div class="container"> 
+			<pre><code class="<%= paste.language %>"><%= paste.content %></code></pre>
+		</div>
+	</div>
 </div> 
