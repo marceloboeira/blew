@@ -29,7 +29,6 @@ function verifyPassword(user, password, cb) {
 var verifyHandlerLocal = function (username, password, cb) {
     process.nextTick(function () {
       findByUsername(username, function (err, user) {
-        console.log('heref');
         if (err) return cb(null, err);
         if (user == undefined) {
             findByEmail(username, function(err, user) {
@@ -56,7 +55,7 @@ var verifyHandler = function (token, tokenSecret, profile, cb) {
 
             findByEmail(profile.emails[0].value, function(err, user){
                 if (err) return cb(err);
-                if (typeof user !== undefined) {
+                if (user !== undefined) {
                     return cb(err,user);
                 }
                 else {
@@ -74,16 +73,17 @@ var verifyHandler = function (token, tokenSecret, profile, cb) {
         else {
             return cb('No email provided', null);
         }
-        
     });
 };
 
 passport.serializeUser(function (user, cb) {
-    cb(null, user);
+    cb(null, user.id);
 });
 
-passport.deserializeUser(function (user, cb) {
-    cb(null, user);
+passport.deserializeUser(function (id, cb) {
+    findById(id, function(err, user){
+        return cb(err, user);
+    });
 });
 
 passport.use(new GitHubStrategy(sails.config.passport.github, verifyHandler));
