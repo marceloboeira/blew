@@ -38,7 +38,7 @@ See below the TODO list.
 #### Front-end
 * [jQuery](http://jquery.com) - Powerful JavaScript framework;
 * [Twitter Bootstrap](http://getbootstrap.com/) - A really cool css/js framework;
-* [Highligh.js](https://highlightjs.org/) - A JavaScript Powered code highlight tool;
+* [Highlight.js](https://highlightjs.org/) - A JavaScript Powered code highlight tool;
 
 #### Back-end
 
