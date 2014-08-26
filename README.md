@@ -38,6 +38,7 @@ See below the TODO list.
 #### Front-end
 * [jQuery](http://jquery.com) - Powerful JavaScript framework;
 * [Twitter Bootstrap](http://getbootstrap.com/) - A really cool css/js framework;
+* [Highligh.js](https://highlightjs.org/) - A JavaScript Powered code highlight tool;
 
 #### Back-end
 
@@ -48,9 +49,8 @@ See below the TODO list.
 	* [bcrypt](https://github.com/ncb000gt/node.bcrypt.js) - Package to create hashs;
 * [MongoDB](http://mongodb.org/) - An open-source NoSQL database;
 
-
-
 #### Tools
+
 * [GitHub](http://github.com/) - Social coding :octocat:;
 * [NewRelic](http://newrelic.com/) - Server-side app monitor;
 * [Heroku](http://heroku.com/) - Server hosting;
