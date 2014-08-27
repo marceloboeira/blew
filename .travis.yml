@@ -1,3 +1,10 @@
 language: node_js
 node_js:
-  - "0.10"
+- '0.10'
+deploy:
+  app: 
+  	master: blew-dev
+    stable: blew
+  provider: heroku		
+  api_key:
+    secure: N0F33Eqhu+di1pw2ywGMRG1TQCwChiYSZO7et5M772QsUx190IpWpmWxEkGQl4jDfo9LOr61fp7f81arLfM2qgZ/0sz0Zo2DBcrvb2VyjME6PZx7W91OLQsn91FQcH2EepzyVJBhbNIPo820FcGrB/c9Ayc7TplxFJt8fMdwYLo=
