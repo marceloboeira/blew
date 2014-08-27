@@ -1,4 +1,4 @@
-blew [![Travis](http://img.shields.io/travis/vimia/blew/master.svg)](https://travis-ci.org/vimia/blew) [ ![Codeship Status for marceloboeira/alpha-id](https://codeship.io/projects/1f946900-05ff-0132-7616-7ed0f2840353/status)](https://codeship.io/projects/31007)
+blew [![Travis](http://img.shields.io/travis/vimia/blew/master.svg)](https://travis-ci.org/vimia/blew) [ ![Codeship Status for vimia/blew](https://codeship.io/projects/8a1061c0-1013-0132-bd99-12312912b657/status)](https://codeship.io/projects/32773)
 ========
 
 ### What ?
