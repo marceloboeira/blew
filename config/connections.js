@@ -8,7 +8,11 @@ module.exports.connections = {
 
   test: {
     adapter: process.env.TEST_DB_ADAPTER ||  'sails-disk',
-    url: process.env.TEST_DB_URL || 'localhost',
+  },
+
+  stage: {
+    adapter: process.env.STAGE_DB_ADAPTER ||  'sails-disk',
+    url: process.env.STAGE_DB_URL || 'localhost',
     ssl: true
   },
 
