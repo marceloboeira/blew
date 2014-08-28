@@ -12,7 +12,7 @@ blew
 
 ## :rocket: Getting Started
 
-Coming soon!
+> ###### Coming soon!
 
  
 ### :bar_chart: Badges
@@ -28,7 +28,8 @@ Coming soon!
 
 ### :octocat: Want to help ?
 
-See our [issues](http://github.com/vimia/blew/issues) the TODO list
+So you're a kickass developer? Help us and keep open-source alive!
+See our [issues](http://github.com/vimia/blew/issues) and feel free to open a pull-request.
 
 ### :clap: We Use / Thanks to
 
