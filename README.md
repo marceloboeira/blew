@@ -1,5 +1,9 @@
-blew [![Travis](http://img.shields.io/travis/vimia/blew/master.svg)](https://travis-ci.org/vimia/blew) [ ![Codeship Status for vimia/blew](https://codeship.io/projects/8a1061c0-1013-0132-bd99-12312912b657/status)](https://codeship.io/projects/32773)
+blew 
 ========
+
+> ######:construction: Warning: DO NOT use in production.
+> The project still under development, we hope to release a stable version soon. 
+
 
 ### What ?
  
@@ -11,27 +15,20 @@ blew [![Travis](http://img.shields.io/travis/vimia/blew/master.svg)](https://tra
 Coming soon!
 
  
-### :bar_chart: Stats
+### :bar_chart: Badges
 
-Coming soon!
+[![Codeship Status for vimia/blew](https://codeship.io/projects/8a1061c0-1013-0132-bd99-12312912b657/status)](https://codeship.io/projects/32773)
+
+[![Travis](http://img.shields.io/travis/vimia/blew.svg?style=flat)](https://travis-ci.org/vimia/blew)
+
+[![License](http://img.shields.io/npm/l/blew.svg?style=flat)](https://travis-ci.org/vimia/blew)
+
+[![Downloads](http://img.shields.io/npm/dm/blew.svg?style=flat)](https://npm.org/vimia/blew)
 
 
 ### :octocat: Want to help ?
 
-See below the TODO list.
-
-#### TODO:
-
-* ACL 
-* Tests (Mocha)
-* ~~Travis.ci~~
-* Code Climate
-* Coverage
-* ~~Auth Section/File~~
-* Refactoring
-* Installing
-* Usage -> This file
-* Open-Source / License
+See our [issues](http://github.com/vimia/blew/issues) the TODO list
 
 ### :clap: We Use / Thanks to
 
@@ -54,5 +51,6 @@ See below the TODO list.
 * [GitHub](http://github.com/) - Social coding :octocat:;
 * [NewRelic](http://newrelic.com/) - Server-side app monitor;
 * [Heroku](http://heroku.com/) - Server hosting;
+* [CodeShip](http://codeship.io/) - A really cool "Deploy Manager";
 * [CloudFlare](http://cloudflare.com/) - DNS Manager;
 
