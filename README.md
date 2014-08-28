@@ -21,9 +21,9 @@ Coming soon!
 
 [![Travis](http://img.shields.io/travis/vimia/blew.svg?style=flat)](https://travis-ci.org/vimia/blew)
 
-[![License](http://img.shields.io/npm/l/blew.svg?style=flat)](https://travis-ci.org/vimia/blew)
+[![License](http://img.shields.io/npm/l/blew.svg?style=flat)](https://raw.githubusercontent.com/vimia/blew/master/LICENSE)
 
-[![Downloads](http://img.shields.io/npm/dm/blew.svg?style=flat)](https://npm.org/vimia/blew)
+[![Downloads](http://img.shields.io/npm/dm/blew.svg?style=flat)](https://npmjs.org/package/blew)
 
 
 ### :octocat: Want to help ?
