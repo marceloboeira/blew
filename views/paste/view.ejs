@@ -3,10 +3,10 @@
 		<div class="container ">
     		<h1><i class="fa fa-file-code-o "></i> <%= paste.name %></h1>
     		<hr>
-			<i class="fa fa-code "></i> <%= paste.language %> |
-			<i class="fa fa-user "></i> <a href="<%= paste.owner.toJSON().link %>"><%= paste.owner.name %> </a> |
-			<i class="fa fa-calendar "></i> <%= paste.createdAt %> |
-			<i class="fa fa-calendar "></i> <%= paste.updatedAt %> 
+			<i class="fa fa-code"></i> <%= paste.language %> |
+			<i class="fa fa-user"></i> <a href="<%= paste.owner.toJSON().link %>"><%= paste.owner.name %> </a> |
+			<i class="fa fa-calendar"></i> <%= __("Created") %> <date source="<%= paste.createdAt %>"></date> |
+			<i class="fa fa-clock-o"></i> <%= __("Updated") %> <date source="<%= paste.updatedAt %>"></date> 
 			<hr>
     	</div>
     </div>
