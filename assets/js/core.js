@@ -6,18 +6,19 @@ $(function(){
 	  * 	
 	  *	@see https://github.com/vimia/blew/issues/5
 	  */
-	$(document).pjax('a[data-pjax]', 'section#content');
+	$(document).pjax('a[pjax]', '[pjax-container]');
 	
-
 	$(document).on('pjax:send', function() {
-  		
+  		//keep
 	});
-
+	
 	$(document).on('pjax:complete', function() {
+  		// Make moment.js update pjax content after it loads
   		momentLiveUpdate();
   	});
 
 	$(document).on('pjax:end', function() {
+		//keep
   	});
 	
 	/*! 
