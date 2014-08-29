@@ -2,7 +2,8 @@
 module.exports.routes = {
   
   '/': {
-    view: 'homepage',
+    controller: 'index',
+    action: 'index'
   },
 
   user: '/u/',  
@@ -11,7 +12,6 @@ module.exports.routes = {
       controller: 'user',
       action: 'view'
   },
-
 
   paste: '/p/',
 

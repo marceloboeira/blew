@@ -16,7 +16,7 @@
 				<tbody>
 				<% user.pastes.forEach(function(paste) { %>
 					<tr>
-						<td><a href="<%= paste.toJSON().link %>"> <%= paste.name %> </a></td>
+						<td><a data-pjax href="<%= paste.toJSON().link %>"> <%= paste.name %> </a></td>
 						<td><%= paste.language %></td>
 						<td><date source="<%= paste.createdAt %>"></date></td>
 						<td><date source="<%= paste.updatedAt %>"></date></td>

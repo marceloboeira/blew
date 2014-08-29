@@ -1,8 +1,8 @@
 
 module.exports.policies = {
-
-  '*': true,
+	
+  '*': 'isPjaxRequest',
   cli: 'isValidCliRequest',
-  dashboard: 'isAuthenticated'
-
+  dashboard: ['isPjaxRequest','isAuthenticated'],
+  
 };
