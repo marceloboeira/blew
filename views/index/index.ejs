@@ -15,6 +15,31 @@
 		</div>
 	</div>
 	<hr/>
+	<div class="container">
+	<h3><%= __('Last Pastes') %> </h3>
+	<table class="table table-condensed table-striped"> 
+		<thead>	
+			<tr>
+				<th><%= __('Name') %> </td>
+				<th><%= __('Owner') %> </td>
+				<th><%= __('Language') %> </td>
+				<th><%= __('Created') %> </td>
+				<th><%= __('Updated') %> </td>
+			</tr>
+		</thead>
+		<tbody>
+		<% lastPastes.forEach(function(paste) { %>
+			<tr>
+				<td><a pjax href="<%= paste.toJSON().link %>"> <%= paste.name %> </a></td>
+				<td><%= paste.language %></td>
+				<td><%= paste.owner.name %></td>
+				<td><date source="<%= paste.createdAt %>"></date></td>
+				<td><date source="<%= paste.updatedAt %>"></date></td>
+			</tr>
+		<% }); %>
+		<tbody>
+	</table>
+	</div>
 	<div class="row">
 	 	<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
 			<div class="thumbnail">
@@ -66,6 +91,5 @@
 			</div>
 		</div>
 	</div>				
-
 	<hr>
 </div>

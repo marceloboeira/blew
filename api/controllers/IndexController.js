@@ -8,7 +8,14 @@
 module.exports = {
 
   index: function (req, res) {
-    return res.view();
+
+  	Paste.find()
+		.populate('owner')
+		.sort({ createdAt: 'desc' })
+		.limit(10)
+		.exec(function(err, lp) {
+  			return res.view({lastPastes: lp});
+  		});
   }
 };
 
