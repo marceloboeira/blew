@@ -13,8 +13,10 @@ $(function(){
 	});
 	
 	$(document).on('pjax:complete', function() {
-  		// Make moment.js update pjax content after it loads
+  		
+  		// Make update pjax content needs after it loads
   		momentLiveUpdate();
+  		hljs.initHighlighting();	
   	});
 
 	$(document).on('pjax:end', function() {
