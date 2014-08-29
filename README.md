@@ -35,8 +35,10 @@ See our [issues](http://github.com/vimia/blew/issues) and feel free to open a pu
 
 #### Front-end
 * [jQuery](http://jquery.com) - Powerful JavaScript framework;
+	* [jQuery.pjax](https://github.com/defunkt/jquery-pjax) - jQuery plugin that uses ajax and pushState to deliver a fast browsing;
 * [Twitter Bootstrap](http://getbootstrap.com/) - A really cool css/js framework;
 * [Highlight.js](https://highlightjs.org/) - A JavaScript Powered code highlight tool;
+* [pace](https://github.com/HubSpot/pace) - An automatic web page progress bar;
 
 #### Back-end
 
