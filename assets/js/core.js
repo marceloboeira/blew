@@ -1,12 +1,13 @@
 
 $(function(){
-
+	var pjaxContainer = '[pjax-container]';
+	var $pjaxContainer = $('[pjax-container]');
 	/*! 
 	  * Pjax to load only what you need
 	  * 	
 	  *	@see https://github.com/vimia/blew/issues/5
 	  */
-	$(document).pjax('a[pjax]', '[pjax-container]');
+	$(document).pjax('a[pjax]', pjaxContainer);
 	
 	$(document).on('pjax:send', function() {
   		//keep
@@ -16,7 +17,7 @@ $(function(){
   		
   		// Make update pjax content needs after it loads
   		momentLiveUpdate();
-  		hljs.initHighlighting();	
+  		highlightLiveUpdate();
   	});
 
 	$(document).on('pjax:end', function() {
@@ -24,7 +25,18 @@ $(function(){
   	});
 	
 	/*! 
-	  * Moment.js to make timestamps pretty 
+	  * Highlight.js to make code looks pretty 
+	  * 	
+	  *	@see https://github.com/vimia/blew/issues/29
+	  */
+	var highlightLiveUpdate = function() {
+		$pjaxContainer.each(function(i, block) {
+  			hljs.highlightBlock(block);
+		});
+	};
+
+	/*! 
+	  * Moment.js to make timestamps looks pretty 
 	  * 	
 	  *	@see https://github.com/vimia/blew/issues/14
 	  */
