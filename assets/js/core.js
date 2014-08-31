@@ -30,7 +30,7 @@ $(function(){
 	  *	@see https://github.com/vimia/blew/issues/29
 	  */
 	var highlightLiveUpdate = function() {
-		$pjaxContainer.each(function(i, block) {
+		$('code[highlight]').each(function(i, block) {
   			hljs.highlightBlock(block);
 		});
 	};
