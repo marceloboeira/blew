@@ -54,6 +54,7 @@ See our [issues](http://github.com/vimia/blew/issues) and feel free to open a pu
 * [GitHub](http://github.com/) - Social coding :octocat:;
 * [NewRelic](http://newrelic.com/) - Server-side app monitor;
 * [Heroku](http://heroku.com/) - Server hosting;
-* [CodeShip](http://codeship.io/) - A really cool "Deploy Manager";
-* [CloudFlare](http://cloudflare.com/) - DNS Manager;
+* [CodeShip](http://codeship.io/) - A really cool Continuous Integration tool, and our "Automated Deploy Manager";
+* [Travis](http://travis.ci/) - Another cool continuous integration;
+* [CloudFlare](http://cloudflare.com/) - Our favorite DNS Manager;
 
