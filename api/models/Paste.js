@@ -31,9 +31,16 @@ module.exports = {
     	defaultsTo: null
     },
 
+    getLink: function(){
+      return sails.config.globals.baseUrl + sails.config.routes.paste + this.id;
+    },
+
+    isPrivate: function() {
+      return (this.private === true);
+    },
+
     toJSON: function() {
       var obj = this.toObject();
-      obj.link = sails.config.globals.baseUrl + sails.config.routes.paste + obj.id;
       return obj;
     }
 	
