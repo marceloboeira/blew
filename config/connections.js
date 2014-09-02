@@ -11,9 +11,9 @@ module.exports.connections = {
   },
 
   stage: {
-    adapter: process.env.STAGE_DB_ADAPTER ||  'sails-disk',
-    url: process.env.STAGE_DB_URL || 'localhost',
-    ssl: process.env.STAGE_DB_SSL || true, 
+    adapter: process.env.STAGING_DB_ADAPTER ||  'sails-disk',
+    url: process.env.STAGING_DB_URL || 'localhost',
+    ssl: process.env.STAGING_DB_SSL || true, 
   },
 
   production: {
