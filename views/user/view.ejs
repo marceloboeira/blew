@@ -1,7 +1,7 @@
 <div class="container">
 	<div class="row">
 		<div class="col-xs-12 ">
-			<h1 class="h1 font-bold"><i class="fa fa-user "></i> <%= user.name %></h1>
+			<a href="<%= user.getLink() %>"><h1 class="h1 font-bold"><i class="fa fa-user "></i> <%= user.name %></h1></a>
 			<hr>
 			<h2>  <i class="fa fa-file-code-o"></i> <%= __('Pastes') %> </h2>
 			<table class="table table-bordered table-condensed">
@@ -16,7 +16,7 @@
 				<tbody>
 				<% user.pastes.forEach(function(paste) { %>
 					<tr>
-						<td><a pjax href="<%= paste.toJSON().link %>"> <%= paste.name %> </a></td>
+						<td><a pjax href="<%= paste.getLink() %>"> <%= paste.name %> </a></td>
 						<td><%= paste.language %></td>
 						<td><date source="<%= paste.createdAt %>"></date></td>
 						<td><date source="<%= paste.updatedAt %>"></date></td>

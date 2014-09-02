@@ -30,9 +30,9 @@
 		<tbody>
 		<% lastPastes.forEach(function(paste) { %>
 			<tr>
-				<td><a pjax href="<%= paste.toJSON().link %>"> <%= paste.name %> </a></td>
+				<td><a pjax href="<%= paste.getLink() %>"> <%= paste.name %> </a></td>
 				<td><%= paste.language %></td>
-				<td><%= paste.owner.name %></td>
+				<td><a pjax href="<%= paste.owner.getLink() %>"><%= paste.owner.name %></a></td>
 				<td><date source="<%= paste.createdAt %>"></date></td>
 				<td><date source="<%= paste.updatedAt %>"></date></td>
 			</tr>
