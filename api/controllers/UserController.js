@@ -3,15 +3,28 @@ module.exports = {
 
 	view: function (req, res) {
 		var username = req.param('username');
-				
-		User.findOne({username:username})
+		
+		//TODO If is not the ID, then is the username				
+		User.findOne({id:username})
 			.populate('keys')
 			.populate('pastes')
 			.exec(function(err, user){
-				if (err) return res.notFound();
-				return res.view({user: user});
+				if (err || !user) {
+					User.findOne({username:username})
+						.populate('keys')
+						.populate('pastes')
+						.exec(function(err, user){
+							if (err || !user) return res.notFound();
+							return res.view({user: user});
+					});
+					
+				}
+				else {
+					return res.view({user: user});	
+				}
+				
+				
 		});
-		
 	}
 };
 
