@@ -10,7 +10,7 @@ module.exports.connections = {
     adapter: process.env.TEST_DB_ADAPTER ||  'sails-disk',
   },
 
-  stage: {
+  staging: {
     adapter: process.env.STAGING_DB_ADAPTER ||  'sails-disk',
     url: process.env.STAGING_DB_URL || 'localhost',
     ssl: process.env.STAGING_DB_SSL || true, 
