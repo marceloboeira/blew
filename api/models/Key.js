@@ -1,8 +1,7 @@
 
 module.exports = {
-  
-  attributes: {
 
+  attributes: {
     owner:{
       model:'user',
       required: true
@@ -24,7 +23,6 @@ module.exports = {
       required: true,
       defaultsTo: false  
     }
-    
   }
 };
 

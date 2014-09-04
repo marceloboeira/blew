@@ -14,19 +14,15 @@ module.exports = {
   },
 
   "sign-up-post": function(req, res) {
-      var data = {name: req.param('name'),
-                  email: req.param('email'),
-          }
+    var data = {name: req.param('name'), email: req.param('email') };
 
-      User.create(data, function (err, user) {
-        if (err) {
-          req.flash('danger','Error 101020300');  
-          return res.redirect('/auth/sign-up');
-        }
-        return res.redirect('/auth/sign-up/ok');
-
-      });
-
+    User.create(data, function (err, user) {
+      if (err) {
+        req.flash('danger','Error 101020300');  
+        return res.redirect('/auth/sign-up');
+      }
+      return res.redirect('/auth/sign-up/ok');
+    });
   },
 
   "sign-in": function(req, res) {
