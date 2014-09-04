@@ -15,15 +15,15 @@
 > ###### Coming soon!
 
  
-### :bar_chart: Badges
+### :bar_chart: Stats
 
 [![Codeship Status for vimia/blew](https://codeship.io/projects/8a1061c0-1013-0132-bd99-12312912b657/status)](https://codeship.io/projects/32773)
-
 [![Travis](http://img.shields.io/travis/vimia/blew.svg?style=flat)](https://travis-ci.org/vimia/blew)
-
 [![License](http://img.shields.io/npm/l/blew.svg?style=flat)](https://raw.githubusercontent.com/vimia/blew/master/LICENSE)
-
 [![Downloads](http://img.shields.io/npm/dm/blew.svg?style=flat)](https://npmjs.org/package/blew)
+[![Stories in Ready](https://badge.waffle.io/vimia/blew.svg?label=ready&title=Ready)](http://waffle.io/vimia/blew)
+
+[![Throughput Graph](https://graphs.waffle.io/vimia/blew/throughput.svg)](https://waffle.io/vimia/blew/metrics)
 
 
 ### :octocat: Want to help ?
