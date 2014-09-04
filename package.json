@@ -31,7 +31,7 @@
     "passport-local": "~1.0.0",
     "pg": "2.x",
     "rc": "~0.3.3",
-    "sails": "~0.10.0-rc9",
+    "sails": "~0.10.5",
     "sails-disk": "~0.10.0",
     "sails-generate-scaffold": "0.0.5",
     "sails-mongo": "~0.10.0-rc5",
