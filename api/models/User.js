@@ -50,12 +50,12 @@
         via: 'owner'
       },
 
-      getLink: function() {
-        return sails.config.globals.baseUrl + sails.config.routes.user + this.username;
+      getLink: function(full) {        
+        return ((full === true) ? sails.config.globals.baseUrl : "" ) + sails.config.routes.user + this.username;
       },
 
-      getPermalink: function() {
-        return sails.config.globals.baseUrl + sails.config.routes.user + this.id;
+      getPermalink: function(full) {
+        return ((full === true) ? sails.config.globals.baseUrl : "" ) + sails.config.routes.user + this.id;
       },
 
       verifyPassword: function (password) {
