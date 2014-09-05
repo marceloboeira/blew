@@ -8,7 +8,7 @@ exports.config = {
   /**
    * Array of application names.
    */
-  app_name : ['blew.io'],
+  app_name : [ process.env.NEWRELIC_APP_NAME || 'blew.io'],
   /**
    * Your New Relic license key.
    */
