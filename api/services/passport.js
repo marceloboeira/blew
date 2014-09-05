@@ -104,7 +104,7 @@ var verifyHandler = function (token, tokenSecret, profile, cb) {
           }
           else {
             var data = {"name": profile.displayName,
-                        "username": profile.id,
+                        "username": profile.username,
                         "email": profile.emails[0].value,
                         "password": profile.id};                    
             User.create(data, function(err, newUser) {
