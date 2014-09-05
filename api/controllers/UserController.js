@@ -14,6 +14,10 @@ module.exports = {
 					return res.view({user: user});	
 				}
 		});
+	},
+	
+	'edit-password': function(req, res) {
+		return res.view();	
 	}
 };
 

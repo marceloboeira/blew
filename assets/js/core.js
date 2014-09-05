@@ -1,16 +1,28 @@
 $(function(){
 	var pjaxContainer = '[pjax-container]';
-	var $pjaxContainer = $('[pjax-container]');
+	var $pjaxContainer = $(pjaxContainer);
+
+	var pjaxModalContainer = '[pjax-modal-container]';
+	var $pjaxModalContainer = $(pjaxModalContainer);
+
+	var pjaxModalClose = '[pjax-modal-close]';
 	
+	$(pjaxModalClose).click(function(e){
+		e.preventDefault();
+		history.back();
+	});
 	/** 
 	 * Pjax to load only what you need
 	 * 	
 	 * @see https://github.com/vimia/blew/issues/5
 	 */
 	$(document).pjax('a[pjax]', pjaxContainer);
+	$(document).pjax('a[pjax-modal]', pjaxModalContainer);
 	
 	$(document).on('pjax:send', function() {
-  		//keep
+  		
+  		// Clear modal content
+  		$pjaxModalContainer.empty();
 	});
 	
 	$(document).on('pjax:complete', function() {
@@ -48,4 +60,19 @@ $(function(){
 	};
 	momentLiveUpdate();
 	setInterval(momentLiveUpdate, 60000);
+
+
+
+	var $btnEditPassword = $("#btnChangePassword");
+	var $btnEditProfile = $("#btnChangeProfile");
+	
 });
+
+
+var editPassword = function (e, cb) {
+	// Load Pajax Modal
+
+	// Force Modal
+
+
+};

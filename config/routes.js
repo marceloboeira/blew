@@ -13,6 +13,11 @@ module.exports.routes = {
       action: 'view'
   },
 
+  '/settings/edit-password': {
+      controller: 'user',
+      action: 'edit-password'
+  },
+
   paste: '/p/',
 
   '/p/:id': {
