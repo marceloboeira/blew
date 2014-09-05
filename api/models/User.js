@@ -1,4 +1,4 @@
-
+var gravatar = require('gravatar');
 var bcrypt = require('bcrypt');
 var SALT_WORK_FACTOR = 10;
 
@@ -71,6 +71,17 @@ module.exports = {
      */
     getPermalink: function(full) {
       return ((full === true) ? sails.config.globals.baseUrl : "" ) + sails.config.routes.user + this.id;
+    },
+
+
+    /** 
+     * Get User gravatar image url
+     * 
+     * @param attrs
+     * @return String  
+     */
+    getGravatar: function(options, https) {
+      return gravatar.url(this.email, options, https);
     },
 
     /** 
