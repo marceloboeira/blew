@@ -44,6 +44,7 @@ $(function(){
   	modalLiveUpdate();
   	momentLiveUpdate();
   	highlightLiveUpdate();
+  	analyticsLiveUpdate();
   });
 
 	$(document).on('pjax:end', function() {
@@ -78,6 +79,11 @@ $(function(){
 	setInterval(momentLiveUpdate, 60000);
 
 
+	/** 
+	 * Make PJAX work with bootstrap modals
+	 * 	
+	 * @see https://github.com/vimia/blew/issues/40
+	 */
 	var modalLiveUpdate = function() {
 		var md = $('.modal[show]');
 		
@@ -99,7 +105,17 @@ $(function(){
 			}
 			window.history.pushState(' ', ' ', previous);
 		});
-
 	};
 	modalLiveUpdate();
+
+
+	
+	/** 
+	 * Make PJAX work with GA.js
+	 * 	
+	 * @see https://github.com/vimia/blew/issues/35
+	 */
+	var analyticsLiveUpdate = function() {
+		ga('send', 'pageview', location.pathname + location.search + location.hash);
+	};
 });

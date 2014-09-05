@@ -8,5 +8,8 @@ module.exports.globals = {
 
 	baseUrl: process.env.BASE_URL ||  'http://blew.io',
 	baseHost: process.env.BASE_HOST ||  'blew.io',
-	package: require('../package.json')
+	package: require('../package.json'),
+
+	GA: process.env.GA_ID || null,
+
 };
