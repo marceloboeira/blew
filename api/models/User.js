@@ -34,8 +34,7 @@ module.exports = {
    	password:{
    		type: 'string',
    		required: true,
-   		minLength: 6,
-   		maxLength: 50
+   		minLength: 6
    	},
 
     cliKey: {
