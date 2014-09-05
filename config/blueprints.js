@@ -1,6 +1,6 @@
 module.exports.blueprints = {
 
-  actions: false,
+  actions: true,
   rest: false,
   shortcuts: false,
   prefix: '',
