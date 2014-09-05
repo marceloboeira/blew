@@ -40,17 +40,21 @@ module.exports = {
     return res.redirect('/?good-bye=true');
   },
     
-  local: function(req, res) {
+  "sign-in-post": function(req, res) {
     passport.authenticate('local', 
     	function(err, user, info) {
-	    	if (err)
-	         return res.serverError(err);
+	    	if (err) return res.serverError(err);
         if (!user)
-          return res.view("auth/sign-in",{error:info.message});
+          return res.json({error: true,
+                           message: info.message});
         
 	      req.logIn(user, function(err) {
 	        if (err) return res.serverError(err); 
-	        return res.redirect('/dashboard/?p=local');
+	        
+          return res.json({error: false,
+                           message: "Ok!",
+                           url: '/dashboard/?p=local'});
+          
 	      });
     	})(req, res);
   },

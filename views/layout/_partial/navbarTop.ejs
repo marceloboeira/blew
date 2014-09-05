@@ -37,15 +37,16 @@
                             <ul class="dropdown-menu">
                                 <li><a pjax href="/me/pastes"><i class="fa fa-file-code-o"></i> <%= __('Pastes') %></a></li>
                                 <li class="divider"></li>
-                                <li><a pjax href="/account"><i class="fa fa-user"></i> <%= __('My Info') %></a></li>
-                                <li><a pjax href="/account/settings"><i class="fa fa-cogs"></i> <%= __('Settings') %></a></li>
+                                <li><a pjax href="/me"><i class="fa fa-user"></i> <%= __('My Info') %></a></li>
+                                <li><a pjax href="/me/settings"><i class="fa fa-cogs"></i> <%= __('Settings') %></a></li>
+                                <li><a pjax-modal href="/me/change-password"><i class="fa fa-cogs"></i> <%= __('Change Password') %></a></li>
                                 <li class="divider"></li>
                                 <li><a href="/auth/sign-out"><i class="fa fa-sign-out"></i> <%= __('Logout') %></a></li>
                             </ul>
                         </li>
                     <% } else { %>
                         <li><a pjax href=""><i class="fa fa-"></i> <%= __('Trends') %></a></li>
-                        <li><a pjax href="/auth/sign-in"><i class="fa fa-sign-in"></i> <%= __('Sign-in') %></a></li>
+                        <li><a pjax-modal href="/auth/sign-in"><i class="fa fa-sign-in"></i> <%= __('Sign-in') %></a></li>
                     <% }  %>                
 
                 </ul>
