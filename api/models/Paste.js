@@ -1,4 +1,6 @@
 
+var detectLanguage = require('language-classifier');
+
 module.exports = {
 
   attributes: {
@@ -41,9 +43,15 @@ module.exports = {
 
     toJSON: function() {
       var obj = this.toObject();
+      obj.link = obj.getLink(true);
       return obj;
     }
 	
+  },
+
+  beforeCreate: function(attrs, cb){
+      attrs.language = detectLanguage(attrs.content) || attrs.language || 'Unknow';
+      return cb();
   }
 };
 
