@@ -9,6 +9,11 @@
     <!--STYLES-->
     <link rel="stylesheet" href="/styles/library.css">
     <!--STYLES END-->
+    <!--SCRIPTS-->
+    <script src="/js/sails.io.js"></script>
+    <script src="/js/library.js"></script>
+    <script src="/js/core.js"></script>
+    <!--SCRIPTS END-->
   </head>
 
   <body>
@@ -17,6 +22,8 @@
     </header>
     <section id="flash">
       <%- partial ('_partial/flash.ejs') %>
+    </section>
+    <section id="modal-content" pjax-modal-container>
     </section>
     <section id="content" pjax-container>
       <%- body %>
@@ -28,10 +35,6 @@
     <!--TEMPLATES-->
     
     <!--TEMPLATES END-->
-    <!--SCRIPTS-->
-    <script src="/js/sails.io.js"></script>
-    <script src="/js/library.js"></script>
-    <script src="/js/core.js"></script>
-    <!--SCRIPTS END-->
+    
   </body>
 </html>

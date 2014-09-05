@@ -71,13 +71,15 @@ var verifyHandlerLocal = function (username, password, cb) {
         findByEmail(username, function(err, user) {
           if (err) return cb(null, err);
           if (user == undefined) {
-            return cb(null, false, {message: 'Unknown credentials'});
+            return cb(null, null, {message: 'Unknown credentials'});
           }
+          console.log(8);
           return verifyPassword(user, password, cb);
         }); 
       }
-      else 
+      else {
         return verifyPassword(user, password, cb);
+      }
     })
   });
 };
