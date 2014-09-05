@@ -1,7 +1,10 @@
 
 var bcrypt = require('bcrypt');
-var uuid = require('node-uuid');
 var SALT_WORK_FACTOR = 10;
+
+function uuid() {
+  return require('node-uuid').v4({msecs: new Date().getTime()}).split('-').join('');
+};
 
 module.exports = {
 
@@ -17,7 +20,7 @@ module.exports = {
     username: {
     	type: 'string',
     	required: true,
-       unique: true,
+      unique: true,
     	minLength: 3,
     	maxLength: 30
     },
@@ -107,7 +110,7 @@ module.exports = {
       attrs.password = hash;
 
       // Generate a UUID key to the CLI Tool 
-      attrs.cliKey = uuid.v4({msecs: new Date().getTime()}).replace('-','');
+      attrs.cliKey = uuid();
       return cb();    
     });
   },
@@ -129,5 +132,29 @@ module.exports = {
     else {
       return cb();
     }
-  }
+  },
+
+  signUpHandler: function(attrs, cb) {
+    
+    //Try to find user with same email
+    User.findOne({email:attrs.email}).exec(function(err, user){
+      if (!user) {
+        attrs.username = uuid().slice(0,20);
+        console.log(attrs.username);
+        User.create(attrs, function (err, user) {
+          if (err || !user) {
+            console.log(err);
+            return cb(err, 'Invalid data');
+          }
+          return cb(null, 'Ok', user);
+        });    
+      }
+      else {
+        return cb(true, 'Email already taken', null);  
+      }
+      
+    }); 
+
+    
+  },
 };

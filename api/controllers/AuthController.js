@@ -4,7 +4,6 @@
  * @description :: Server-side logic for managing auths
  * @help        :: See http://links.sailsjs.org/docs/controllers
  */
- 
 var passport = require('passport');
 
 module.exports = {
@@ -14,14 +13,21 @@ module.exports = {
   },
 
   "sign-up-post": function(req, res) {
-    var data = {name: req.param('name'), email: req.param('email') };
 
-    User.create(data, function (err, user) {
-      if (err) {
-        req.flash('danger','Error 101020300');  
+    //*** 
+
+    return res.redirect('/');
+    
+    var data = { name: req.param('name'), 
+                 email: req.param('email'), 
+                 password: req.param('password') };
+    
+    User.signUpHandler(data, function(err, message, user){
+      if (err || !user) {
+        req.flash('danger',message);
         return res.redirect('/auth/sign-up');
       }
-      return res.redirect('/auth/sign-up/ok');
+      return res.view({ user: user });
     });
   },
 
