@@ -39,6 +39,8 @@ See our [issues](http://github.com/vimia/blew/issues) and feel free to open a pu
 * [jQuery](http://jquery.com) - Powerful JavaScript framework;
 	* [jQuery.pjax](https://github.com/defunkt/jquery-pjax) - jQuery plugin that uses ajax and pushState to deliver a fast browsing;
 * [Twitter Bootstrap](http://getbootstrap.com/) - A really cool css/js framework;
+	* [Bootbox.js](http://bootboxjs.com/) - JS Lib which allows you to create dialog boxes using Bootstrap modals;
+	* [BootstrapValidator](http://bootstrapvalidator.com/) - Plugin to validate form fields designed to use with Bootstrap 3;
 * [Highlight.js](https://highlightjs.org/) - A JavaScript Powered code highlight tool;
 * [pace](https://github.com/HubSpot/pace) - An automatic web page progress bar;
 
@@ -54,6 +56,7 @@ See our [issues](http://github.com/vimia/blew/issues) and feel free to open a pu
 #### Tools
 
 * [GitHub](http://github.com/) - Social coding :octocat:;
+* [waffle.io](http://waffle.io/) - Project management solution from your existing GitHub Issues;
 * [NewRelic](http://newrelic.com/) - Server-side app monitor;
 * [Heroku](http://heroku.com/) - Server hosting;
 * [CodeShip](http://codeship.io/) - A really cool Continuous Integration tool, and our "Automated Deploy Manager";
