@@ -11,6 +11,6 @@ module.exports.globals = {
 	package: require('../package.json'),
 
 	GA_ID: process.env.GA_ID || null,
-	MIXPANEL_ID: process.env.MX_PANEL || null,
+	MIXPANEL_ID: process.env.MIXPANEL_ID || null,
 
 };
