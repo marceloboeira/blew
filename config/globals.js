@@ -10,6 +10,7 @@ module.exports.globals = {
 	baseHost: process.env.BASE_HOST ||  'blew.io',
 	package: require('../package.json'),
 
-	GA: process.env.GA_ID || null,
+	GA_ID: process.env.GA_ID || null,
+	MIXPANEL_ID: process.env.MX_PANEL || null,
 
 };

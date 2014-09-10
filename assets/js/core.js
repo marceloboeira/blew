@@ -1,6 +1,3 @@
-
-
-
 $(function(){
 
 	/** 
@@ -36,6 +33,9 @@ $(function(){
   	pjax.history.push(location.href);
   	// Clear modal content
   	$pjax.modalContainer.empty();
+
+  	//mixpanel
+  	mixpanel.track("PJAX Send");
 	});
 	
 	$(document).on('pjax:complete', function() {		
@@ -45,10 +45,17 @@ $(function(){
   	momentLiveUpdate();
   	highlightLiveUpdate();
   	analyticsLiveUpdate();
+  	mixpanel.track("PJAX Complete");
   });
 
 	$(document).on('pjax:end', function() {
 		//keep
+		mixpanel.track("PJAX End");
+  });
+
+  $(document).on('pjax:error', function() {
+		//keep
+		mixpanel.track("PJAX Error");
   });
 	
 
