@@ -30,8 +30,8 @@
 				<td><a pjax href="<%= paste.getLink() %>"> <%= paste.name %> </a></td>
 				<td><%= paste.language %></td>
 				<td><a pjax href="<%= paste.owner.getLink() %>"><%= paste.owner.name %></a></td>
-				<td><date source="<%= paste.createdAt %>"></date></td>
-				<td><date source="<%= paste.updatedAt %>"></date></td>
+				<td><date source="<%= paste.createdAt %>"><%=: paste.createdAt | dateFromNow %></date></td>
+				<td><date source="<%= paste.updatedAt %>"><%=: paste.updatedAt | dateFromNow %></date></td>
 			</tr>
 		<% }); %>
 		<tbody>

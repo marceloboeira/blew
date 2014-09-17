@@ -1,7 +1,6 @@
 <div class="container">
 	<div class="row">
   		<div class="col-sm-10">
-
   		<a pjax class="h1 font-bold" href="<%= user.getLink() %>"><h1><%= user.name %></h1></a>
   		</div>
     	<div class="col-sm-2"><a href="/users" class="pull-right"><img title="profile image" class="img-circle img-responsive" src="<%= user.getGravatar({s:120}) %>"></a></div>
@@ -13,10 +12,10 @@
 
             <li class="list-group-item text-right">
             	<span class="pull-left"><strong><%= __('Joined') %> </strong></span> 
-            	<date source="<%= user.createdAt %>"></date>
+            	<date source="<%= user.createdAt %>"><%=: user.createdAt | dateFromNow %></date>
             </li>
             <li class="list-group-item text-right"><span class="pull-left">
-            	<strong><%= __('Last Seen') %> </strong></span> <date source="<%= user.updatedAt %>"></date>
+            	<strong><%= __('Last Seen') %> </strong></span> <date source="<%= user.updatedAt %>"><%=: user.updatedAt | dateFromNow %></date>
             </li>
             <li class="list-group-item text-right">
             	<span class="pull-left"><strong><%= __('Username') %></strong></span> <%= user.username %>
@@ -53,8 +52,9 @@
 										<tr>
 											<td><a pjax href="<%= paste.getLink() %>"> <%= paste.name %> </a></td>
 											<td><%= paste.language %></td>
-											<td><date source="<%= paste.createdAt %>"></date></td>
-											<td><date source="<%= paste.updatedAt %>"></date></td>
+
+											<td><date source="<%= paste.createdAt %>"><%=: paste.createdAt | dateFromNow %></date></td>
+											<td><date source="<%= paste.updatedAt %>"><%=: paste.updatedAt | dateFromNow %></date></td>
 									    </tr>
 									<% }); %>
 									</tbody>
@@ -89,11 +89,8 @@
                   </tbody>
                 </table>
                 !>
-              </div>
-               
-               
+              </div>                    
              </div>
           </div>
-
         </div>
     </div>
