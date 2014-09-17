@@ -10,11 +10,13 @@ module.exports = {
 				if (err || !user) {
 					User.findOne({username:username}).populate('keys').populate('pastes').exec(function(err, user) {
 						if (err || !user) return res.notFound();
-						return res.view({user: user});
+						return res.view({user: user,
+													 title: res.__('%s Profile', user.name)});
 					});
 				}
 				else {
-					return res.view({user: user});	
+					return res.view({user: user,
+													 title: res.__('%s Profile', user.name)});
 				}
 		});
 	},
