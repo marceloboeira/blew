@@ -19,5 +19,11 @@ module.exports.http = {
       '500'
     ],
   },
-  cache: 31557600000
+  cache: 31557600000,
+  
+  // Keep to FilerService work
+  locals: {
+    filters: []
+  }
 };
+
