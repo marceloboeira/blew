@@ -4,7 +4,8 @@ module.exports = {
  		var id = req.param('id');			
 		Paste.findOne(id).populate('owner').exec(function(err, paste){	 	
 			if (err || !paste) return res.notFound();
-			return res.view({ paste: paste });
+			return res.view({title: paste.name,
+											 paste: paste });
 		});
   }	
 };
