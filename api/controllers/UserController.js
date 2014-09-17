@@ -11,18 +11,18 @@ module.exports = {
 					User.findOne({username:username}).populate('keys').populate('pastes').exec(function(err, user) {
 						if (err || !user) return res.notFound();
 						return res.view({user: user,
-													 title: res.__('%s Profile', user.name)});
+													 title: res.__("%s's Profile", user.name)});
 					});
 				}
 				else {
 					return res.view({user: user,
-													 title: res.__('%s Profile', user.name)});
+													 title: res.__("%s's Profile", user.name)});
 				}
 		});
 	},
 	
 	'change-password': function(req, res) {
-		return res.view();	
+		return res.view({title: res.__("Change Password")});	
 	},
 
 	'change-password-post': function(req, res) {

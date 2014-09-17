@@ -5,14 +5,14 @@
                 <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">
                 </span>
             </button> 
-                <a pjax class="navbar-brand" href="/"><i class="fa fa-terminal"></i> <%= __('projectName') %></a>
+                <a pjax class="navbar-brand" href="/"><%-: 'terminal' | iconComponent %> <%=__('projectName') %></a>
             </div>
             
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav hidden-xs">
                     <li class="dropdown">
                         <a href="#" id="aside-toggle">
-                            <i class="fa fa-bars"></i>
+                            <%-: 'bars' | iconComponent %>
                         </a>
                     </li>
                 </ul>
@@ -22,30 +22,62 @@
                             <input type="text" class="form-control input-sm " placeholder="">
                             <span class="input-group-btn">
                                 <button type="submit" class="btn btn-sm bg-white b-white btn-icon">
-                                   <i class="fa fa-search"></i>
+                                   <%-: 'search' | iconComponent %>
                                 </button>
                             </span>
                         </div>
                     </div>
                 </form>
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a pjax href="/about/statistics"><i class="fa fa-bar-chart-o"></i> <%= __('Statistics') %></a></li>
-                    <li><a pjax href="/about/roadmap"><i class="fa fa-road"></i> <%= __('Roadmap') %></a></li>
+                    <li>
+                        <a pjax href="/about/statistics">
+                            <i class="fa fa-bar-chart-o"></i> <%= __('Statistics') %>
+                        </a>
+                    </li>
+                    <li>
+                        <a pjax href="/about/roadmap">
+                            <%-: 'road' | iconComponent %> <%= __('Roadmap') %>
+                        </a>
+                    </li>
                     <% if (req.isAuthenticated()) { %>
                         <li class="dropdown">
                              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><%= req.user.name %><strong class="caret"></strong></a>
                             <ul class="dropdown-menu">
-                                <li><a pjax href="/me/pastes"><i class="fa fa-file-code-o"></i> <%= __('Pastes') %></a></li>
+                                <li>
+                                    <a pjax href="/me/pastes">
+                                        <%-: 'files-o' | iconComponent %> <%= __('Pastes') %>
+                                    </a>
+                                </li>
                                 <li class="divider"></li>
-                                <li><a pjax href="/me"><i class="fa fa-user"></i> <%= __('My Info') %></a></li>
-                                <li><a pjax href="/me/settings"><i class="fa fa-cogs"></i> <%= __('Settings') %></a></li>
-                                <li><a pjax-modal href="/me/change-password"><i class="fa fa-cogs"></i> <%= __('Change Password') %></a></li>
+                                <li>
+                                    <a pjax href="/me">
+                                        <%-: 'user' | iconComponent %></i> <%= __('My Info') %>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a pjax href="/me/settings">
+                                        <%-: 'cogs' | iconComponent %> <%= __('Settings') %>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a pjax-modal href="/me/change-password">
+                                        <%-: 'key' | iconComponent %> <%= __('Change Password') %>
+                                    </a>
+                                </li>
                                 <li class="divider"></li>
-                                <li><a href="/auth/sign-out"><i class="fa fa-sign-out"></i> <%= __('Logout') %></a></li>
+                                <li>
+                                    <a href="/auth/sign-out">
+                                        <%-: 'sign-out' | iconComponent %> <%= __('Logout') %>
+                                    </a>
+                                </li>
                             </ul>
                         </li>
                     <% } else { %>
-                        <li><a pjax-modal href="/auth/sign-in"><i class="fa fa-sign-in"></i> <%= __('Sign-in') %></a></li>
+                        <li>
+                            <a pjax-modal href="/auth/sign-in">
+                                <%-: 'sign-in' | iconComponent %> <%= __('Sign-in') %>
+                            </a>
+                        </li>
                     <% }  %>                
 
                 </ul>

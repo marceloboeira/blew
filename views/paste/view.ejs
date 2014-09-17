@@ -5,10 +5,8 @@
     		<hr>
 			<i class="fa fa-code"></i> <%= paste.language %> |
 			<i class="fa fa-user"></i> <a pjax href="<%= paste.owner.getLink() %>"><%= paste.owner.name %> </a> |
-			<i class="fa fa-calendar"></i> <%= __("Created") %> 
-				<date source="<%= paste.createdAt %>"><%=: paste.createdAt | dateFromNow %>"</date> |
-			<i class="fa fa-clock-o"></i> <%= __("Updated") %> 
-				<date source="<%= paste.updatedAt %>"><%=: paste.updatedAt | dateFromNow %></date> 
+			<i class="fa fa-calendar"></i> <%= __("Created") %><%-: paste.createdAt | dateComponent %> |
+			<i class="fa fa-clock-o"></i> <%= __("Updated") %><%-: paste.createdAt | dateComponent %>
 			<hr>
     	</div>
     </div>

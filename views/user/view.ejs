@@ -12,10 +12,10 @@
 
             <li class="list-group-item text-right">
             	<span class="pull-left"><strong><%= __('Joined') %> </strong></span> 
-            	<date source="<%= user.createdAt %>"><%=: user.createdAt | dateFromNow %></date>
+            	<%-: user.createdAt | dateComponent %>
             </li>
             <li class="list-group-item text-right"><span class="pull-left">
-            	<strong><%= __('Last Seen') %> </strong></span> <date source="<%= user.updatedAt %>"><%=: user.updatedAt | dateFromNow %></date>
+            	<strong><%= __('Last Seen') %> </strong></span> <%-: user.updatedAt | dateComponent %></date>
             </li>
             <li class="list-group-item text-right">
             	<span class="pull-left"><strong><%= __('Username') %></strong></span> <%= user.username %>
@@ -53,8 +53,8 @@
 											<td><a pjax href="<%= paste.getLink() %>"> <%= paste.name %> </a></td>
 											<td><%= paste.language %></td>
 
-											<td><date source="<%= paste.createdAt %>"><%=: paste.createdAt | dateFromNow %></date></td>
-											<td><date source="<%= paste.updatedAt %>"><%=: paste.updatedAt | dateFromNow %></date></td>
+											<td><%-: paste.createdAt | dateComponent %></td>
+											<td><%-: paste.updatedAt | dateComponent %></td>
 									    </tr>
 									<% }); %>
 									</tbody>
