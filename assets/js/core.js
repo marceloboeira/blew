@@ -70,7 +70,8 @@ $(function(){
   		hljs.highlightBlock(block);
 		});
 	};
-
+	highlightLiveUpdate();
+	
 	/** 
 	 * Moment.js to make timestamps looks pretty 
 	 * 	
