@@ -8,6 +8,10 @@ $(function(){
 	 */
 	var Global = {
 		  pjax: {
+		  	options: {
+		  		timeout: 10000, // Prevent redirects ...
+		  		replace: true
+		  	},
 		  	history: [],
 		  	caller: "[pjax]",
 				container: "[pjax-container]",
@@ -23,10 +27,12 @@ $(function(){
 				},		  	
 		  }
 	};
+	
 	var pjax = Global.pjax;
 	var $pjax = Global.pjax.$;
-	$(document).pjax(pjax.caller, pjax.container);
-	$(document).pjax(pjax.modalCaller, pjax.modalContainer);
+
+	$(document).pjax(pjax.caller, pjax.container, pjax.options);
+	$(document).pjax(pjax.modalCaller, pjax.modalContainer, pjax.options);
 
 	$(document).on('pjax:send', function() {
   	// Save history
@@ -38,7 +44,7 @@ $(function(){
   	mixpanel.track("PJAX Send");
 	});
 	
-	$(document).on('pjax:complete', function() {		
+	$(document).on('pjax:complete', function(e) {		
   	
   	// Make update pjax content needs after it loads
   	modalLiveUpdate();
@@ -48,13 +54,23 @@ $(function(){
   	mixpanel.track("PJAX Complete");
   });
 
-	$(document).on('pjax:end', function() {
+	$(document).on('pjax:end', function(e) {
 		//keep
 		mixpanel.track("PJAX End");
   });
 
-  $(document).on('pjax:error', function() {
+	$(document).on('pjax:timeout', function (e, a, b){
+		console.log(e);
+		console.log(a);
+		console.log(b);
+		mixpanel.track("PJAX Timeout");
+	});
+
+  $(document).on('pjax:error', function(e, a, b) {
 		//keep
+		console.log(e);
+		console.log(a);
+		console.log(b);
 		mixpanel.track("PJAX Error");
   });
 	
@@ -106,7 +122,7 @@ $(function(){
 		md.on('hidden.bs.modal', function (e) {
 			var url = '/';
 			if (pjax.history.length > 1) {
-				var previous = pjax.history[pjax.history.length-2];
+				var previous = pjax.history[pjax.history.length-1];
 				if (previous != location.href) {
 					url = previous;
 				}
