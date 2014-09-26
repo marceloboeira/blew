@@ -41,7 +41,7 @@
     "sails-postgresql": "~0.10.0-rc4"
   },
   "scripts": {
-    "start": "node app.js",
+    "start": "node app.js --prod",
     "debug": "node debug app.js"
   },
   "main": "app.js",
