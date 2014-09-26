@@ -1,5 +1,5 @@
 $(function(){
-
+	mixpanel.track("page-load");	
 	/** 
 	 * Pjax to load only what you need
 	 * 	
@@ -35,43 +35,36 @@ $(function(){
 	$(document).pjax(pjax.modalCaller, pjax.modalContainer, pjax.options);
 
 	$(document).on('pjax:send', function() {
-  	// Save history
+  	// Save history && Clear modal content
   	pjax.history.push(location.href);
-  	// Clear modal content
   	$pjax.modalContainer.empty();
 
-  	//mixpanel
-  	mixpanel.track("PJAX Send");
+  	mixpanel.track("pjax:send");
 	});
 	
-	$(document).on('pjax:complete', function(e) {		
+	$(document).on('pjax:complete', function(xhr, textStatus, options) {		
   	
   	// Make update pjax content needs after it loads
   	modalLiveUpdate();
   	momentLiveUpdate();
   	highlightLiveUpdate();
   	analyticsLiveUpdate();
-  	mixpanel.track("PJAX Complete");
+  	mixpanel.track("pjax:complete");
   });
 
-	$(document).on('pjax:end', function(e) {
+	$(document).on('pjax:end', function(xhr, options) {
 		//keep
-		mixpanel.track("PJAX End");
+		mixpanel.track("pjax:end");
   });
 
-	$(document).on('pjax:timeout', function (e, a, b){
-		console.log(e);
-		console.log(a);
-		console.log(b);
-		mixpanel.track("PJAX Timeout");
+	$(document).on('pjax:timeout', function(xhr, options){
+		//keep
+		mixpanel.track("pjax:timeout");
 	});
 
-  $(document).on('pjax:error', function(e, a, b) {
+  $(document).on('pjax:error', function(xhr, textStatus, error, options) {
 		//keep
-		console.log(e);
-		console.log(a);
-		console.log(b);
-		mixpanel.track("PJAX Error");
+		mixpanel.track("pjax:error");
   });
 	
 
@@ -117,6 +110,7 @@ $(function(){
 			var el = $(this);
 			var md = $(el.attr(pjax.modalCloser));
 			md.modal('hide');
+			mixpanel.track("pjax:modal-hide");
 		});
 
 		md.on('hidden.bs.modal', function (e) {
@@ -140,6 +134,7 @@ $(function(){
 	 * @see https://github.com/vimia/blew/issues/35
 	 */
 	var analyticsLiveUpdate = function() {
+		mixpanel.track("analytics-update");
 		ga('send', 'pageview', location.pathname + location.search + location.hash);
 	};
 });
