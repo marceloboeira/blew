@@ -15,13 +15,6 @@ var parsing = function(path, options, cb) {
     options.locals._layoutFile = '/layout/default.ejs';
     ejs(path, options, function(err, str){
     	// Minify   
-      str = minify(str,{collapseWhitespace: true, 
-      									removeComments: true,
-      									collapseBooleanAttributes: true,
-      									minifyJS: true,
-      									minifyCSS: true,
-      									minifyURLs: true
-      								});
       return cb(err, str);
     });
 
