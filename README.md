@@ -36,6 +36,7 @@ See our [issues](http://github.com/vimia/blew/issues) and feel free to open a pu
 ### :clap: We Use / Thanks to
 
 #### Front-end
+* [bower](https://github.com/bower/bower) - Front-end solution for packages;
 * [jQuery](http://jquery.com) - Powerful JavaScript framework;
 	* [jQuery.pjax](https://github.com/defunkt/jquery-pjax) - jQuery plugin that uses ajax and pushState to deliver a fast browsing;
 * [Twitter Bootstrap](http://getbootstrap.com/) - A really cool css/js framework;
@@ -43,6 +44,7 @@ See our [issues](http://github.com/vimia/blew/issues) and feel free to open a pu
 	* [BootstrapValidator](http://bootstrapvalidator.com/) - Plugin to validate form fields designed to use with Bootstrap 3;
 * [Highlight.js](https://highlightjs.org/) - A JavaScript Powered code highlight tool;
 * [pace](https://github.com/HubSpot/pace) - An automatic web page progress bar;
+* [moment](https://github.com/moment/moment) - An easy way to handle time issues;
 
 #### Back-end
 
