@@ -1,0 +1,59 @@
+<script>
+$(function () {
+    $('#chart').highcharts({
+        chart: {
+            type: 'area'
+        },
+        title: {
+            text: 'Blew usage in 2014'
+        },
+        subtitle: {
+            text: 'PS: Fake Data'
+        },
+        xAxis: {
+           categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
+                'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+        },
+        yAxis: {
+            title: {
+                text: ''
+            },
+            labels: {
+                formatter: function () {
+                    return this.value;
+                }
+            }
+        },
+        tooltip: {
+            pointFormat: '<b>{point.y:,.0f}</b> {series.name} created '
+        },
+        plotOptions: {
+            area: {
+                
+                marker: {
+                    enabled: false,
+                    symbol: 'circle',
+                    radius: 5,
+                    states: {
+                        hover: {
+                            enabled: true
+                        }
+                    }
+                }
+            }
+        },
+        series: [{
+            name: 'Accouns',
+            data: [3, 12, 58, 123, 132, 190, 210, 213, 230, 250, 300, 410]
+        }, {
+            name: 'Pastes',
+            data: [130, 190, 310, 400, 520, 702, 830, 1080, 1100, 1210, 1320, 2390]
+        }]
+    });
+});
+</script>
+
+<div class="container">
+	 <div id="chart">
+	 </div>
+</div>

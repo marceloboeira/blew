@@ -31,12 +31,12 @@
                 <ul class="nav navbar-nav navbar-right">
                     <li>
                         <a pjax href="/about/statistics">
-                            <i class="fa fa-bar-chart-o"></i> <%= __('Statistics') %>
+                            <%-: 'bar-chart-o' | iconComponent %> <%= __('Statistics') %>
                         </a>
                     </li>
                     <li>
-                        <a pjax href="/about/roadmap">
-                            <%-: 'road' | iconComponent %> <%= __('Roadmap') %>
+                        <a pjax href="/about">
+                            <%-: 'road' | iconComponent %> <%= __('About') %>
                         </a>
                     </li>
                     <% if (req.isAuthenticated()) { %>
