@@ -6,7 +6,8 @@
 
 
 var filters = require('ejs').filters;
-
+var moment = require('moment');
+var timeParser = require('parse-duration');
 /** 
  * Apply moment.js at server-side as a  filter
  * 
@@ -14,7 +15,6 @@ var filters = require('ejs').filters;
  * @return 'x days ago' 
  */
 filters.dateFromNow = function(d) {
-	var moment = require('moment');
 	return moment(d).fromNow();
 },
 
@@ -26,7 +26,6 @@ filters.dateFromNow = function(d) {
  * @return '<date source="DirtyDate">x days ago</date>' 
  */
 filters.dateComponent = function(d) {
-	var moment = require('moment');
 	return '<date source="'+ d +'">' + moment(d).fromNow() +'</date>';
 },
 
@@ -50,6 +49,31 @@ filters.pageTitle = function(a, t) {
  */
 filters.iconComponent = function(i, c) {
 	return '<i class="fa fa-'+ i + ' ' + c + '"></i>';
+}
+
+/** 
+ * Time parsing, '1d 4h' => One day and 4 hours => 24 * 60 ...
+ * 
+ * @see https://github.com/jkroso/parse-duration#api  
+ * @param i - Icon name
+ * @param c - adicional classes
+ * @return time in ms
+ */
+filters.parseTime = function(s) {
+  		
+	// var a = new Date();
+	// var b = a.getTime();
+	// var c = FilterService.parseTime('1d');
+	// var d = b + c;
+	// var e = new Date(d);
+	// console.log(a);
+	// console.log(b);
+	// console.log(c);
+	// console.log(d);
+	// console.log(e);
+	// console.log(e);
+
+	return timeParser(s);
 }
 
 // Make Global
