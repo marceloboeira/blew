@@ -12,7 +12,7 @@ module.exports = {
 			 * @see https://github.com/vimia/blew/issues/10
 			 */
 			if (paste.isPrivate()) {
-				if (!req.isAuthenticated() || (paste.owner.id !== req.user.id)) {
+				if (!req.isAuthenticated() || (!paste.isOwner(req.user.id))) {
 						return res.notFound();
 						//return res.forbidden(res.__('This paste is private, only the owner has access.'));	
 				}

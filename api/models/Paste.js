@@ -41,6 +41,11 @@ module.exports = {
       return (this.private === true);
     },
 
+    isOwner: function(u) {
+      var id = (u.id == undefined) ? u : u.id;
+      return (this.owner.id === id);
+    },
+
     toJSON: function() {
       var obj = this.toObject();
       obj.link = obj.getLink(true);
