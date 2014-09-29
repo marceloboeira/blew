@@ -12,7 +12,7 @@ var parsing = function(path, options, cb) {
     // Override the layout file
     options.locals._layoutFile = '/layout/default.ejs';
     ejs(path, options, function(err, str){
-    	  str = minify(str,{collapseWhitespace: true, removeComments: true, collapseBooleanAttributes: true, minifyJS: true, minifyCSS: true, minifyURLs: true });
+    	str = minify(str,{collapseWhitespace: true, conservativeCollapse: true, removeComments: true, collapseBooleanAttributes: true, minifyJS: true, minifyCSS: true, minifyURLs: true });
       return cb(err, str);
     });
 

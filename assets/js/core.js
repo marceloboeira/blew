@@ -4,7 +4,6 @@ $(function(){
 	 * Pjax to load only what you need
 	 * 	
 	 * @see https://github.com/vimia/blew/issues/5
-	 * @see https://github.com/vimia/blew/issues/5
 	 */
 	var Global = {
 		  pjax: {
