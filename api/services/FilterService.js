@@ -55,25 +55,24 @@ filters.iconComponent = function(i, c) {
  * Time parsing, '1d 4h' => One day and 4 hours => 24 * 60 ...
  * 
  * @see https://github.com/jkroso/parse-duration#api  
- * @param i - Icon name
- * @param c - adicional classes
+ * @param s - String to parse ( -1d + 2h)
  * @return time in ms
  */
-filters.parseTime = function(s) {
-  		
-	// var a = new Date();
-	// var b = a.getTime();
-	// var c = FilterService.parseTime('1d');
-	// var d = b + c;
-	// var e = new Date(d);
-	// console.log(a);
-	// console.log(b);
-	// console.log(c);
-	// console.log(d);
-	// console.log(e);
-	// console.log(e);
-
+filters.durationToMilliseconds = function(s) {
 	return timeParser(s);
+}
+
+/** 
+ * Time parsing, '1d 4h' => One day and 4 hours => 24 * 60 ...
+ * 
+ * @see https://github.com/jkroso/parse-duration#api  
+ * @param d - Date Object to sum
+ * @param s - String to parse ( -1d + 2h)
+ * @return Date Object + Parsed Time
+ */
+filters.durationToDate = function(d, s) {
+	d = (d !== undefined) ? d : new Date();
+	return (new Date(d.getTime() + filters.durationToMilliseconds(s)));
 }
 
 // Make Global
