@@ -18,6 +18,15 @@ module.exports = {
 				}
 			}
 
+			/** 
+			 * Paste expired
+			 * 	
+			 * @see https://github.com/vimia/blew/issues/3
+			 */
+			if (paste.itExpires() && paste.isExpired()) {
+				return res.notFound();
+			}
+
 			return res.view({title: paste.name, paste: paste });
 		});
   }	

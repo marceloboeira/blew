@@ -70,7 +70,7 @@ filters.durationToMilliseconds = function(s) {
  * @param s - String to parse ( -1d + 2h)
  * @return Date Object + Parsed Time
  */
-filters.durationToDate = function(d, s) {
+filters.durationToDate = function(s, d) {
 	d = (d !== undefined) ? d : new Date();
 	return (new Date(d.getTime() + filters.durationToMilliseconds(s)));
 }
