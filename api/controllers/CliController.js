@@ -20,16 +20,12 @@ module.exports = {
 			language: req.param('language') || null,
 			private: (req.param('private') == 'true'),
 			content: req.param('content') || null,
+			expiresAt: req.param('expiresAt') || null, // @see https://github.com/vimia/blew/issues/3
 			owner: req.user.id
 		};	
 		
 		Paste.create(data, function (err, paste) {
-			if (!err && paste) {
-				return res.json(paste);
-			}
-			else {
-				return res.json(err);
-			}
+			return res.json((!err && paste) ? paste : err);
 		});
 
 

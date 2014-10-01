@@ -11,6 +11,10 @@
 			<i class="fa fa-user"></i> <a pjax href="<%= paste.owner.getLink() %>"> <%= paste.owner.name %> </a> |
 			<i class="fa fa-calendar"></i> <b><%= __("Created") + " " %> </b><%-: paste.createdAt | dateComponent %> |
 			<i class="fa fa-clock-o"></i> <b><%= __("Updated") + " " %> </b><%-: paste.updatedAt | dateComponent %>
+			
+			<%if (paste.itExpires()) { %>
+			<i class="fa fa-clock-o"></i> <b><%= __("Expires") + " " %> </b><%-: paste.expiresAt | dateComponent %>
+			<% } %>
 			<hr>
     	</div>
     </div>
