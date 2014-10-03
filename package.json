@@ -7,6 +7,7 @@
   "dependencies": {
     "bcrypt": "~0.7.8",
     "blew": "*",
+    "cron": "^1.0.5",
     "ejs": "~0.8.4",
     "ejs-locals": "~1.0.2",
     "gravatar": "^1.0.6",
