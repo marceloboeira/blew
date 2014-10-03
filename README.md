@@ -17,8 +17,6 @@
  
 ### :bar_chart: Stats
 
-
-
 [![Codeship Status for vimia/blew](http://img.shields.io/codeship/8a1061c0-1013-0132-bd99-12312912b657.svg?style=flat)](https://codeship.io/projects/32773)
 [![Travis](http://img.shields.io/travis/vimia/blew.svg?style=flat)](https://travis-ci.org/vimia/blew)
 [![License](http://img.shields.io/npm/l/blew.svg?style=flat)](https://raw.githubusercontent.com/vimia/blew/master/LICENSE)
@@ -26,6 +24,10 @@
 [![Stories in Ready](https://badge.waffle.io/vimia/blew.svg?label=ready&title=Ready)](http://waffle.io/vimia/blew)
 
 [![Throughput Graph](https://graphs.waffle.io/vimia/blew/throughput.svg)](https://waffle.io/vimia/blew/metrics)
+
+
+[![wercker status](https://app.wercker.com/status/2ced73f9d36065dcde3ee4a1c7d070a4/m "wercker status")](https://app.wercker.com/project/bykey/2ced73f9d36065dcde3ee4a1c7d070a4)
+
 
 
 ### :octocat: Want to help ?
