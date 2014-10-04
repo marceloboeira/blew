@@ -10,5 +10,10 @@ module.exports.bootstrap = function(cb) {
   sails.config.http.locals.filters = FilterService;	 
   _.extend(sails.hooks.http.app.locals, sails.config.http.locals);
 
+  /** 
+   * Injecting CronJobs
+   *
+   * @see https://github.com/vimia/blew/issues/65
+   */
   sails.config.cron.start(sails);
 };
