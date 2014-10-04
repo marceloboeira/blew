@@ -98,7 +98,6 @@ module.exports = {
   },
 
   beforeValidate: function(attrs, cb) {
-
     // @see https://github.com/vimia/blew/issues/3
     attrs.expiresAt = (attrs.expiresAt !== null) ? FilterService.durationToDate(attrs.expiresAt) : null;
 
