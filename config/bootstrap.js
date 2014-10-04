@@ -10,5 +10,5 @@ module.exports.bootstrap = function(cb) {
   sails.config.http.locals.filters = FilterService;	 
   _.extend(sails.hooks.http.app.locals, sails.config.http.locals);
 
-  sails.config.cron.start();
+  sails.config.cron.start(sails);
 };
