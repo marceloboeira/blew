@@ -55,6 +55,10 @@ See our [issues](http://github.com/vimia/blew/issues) and feel free to open a pu
 		* [SailsCore](https://github.com/vimia/sails-core) - Simple Core with Sails JS;
 	* [Passport.js](http://passportjs.org/) - An OAuth adapter;
 	* [bcrypt](https://github.com/ncb000gt/node.bcrypt.js) - Package to create hashs;
+	* [cron](https://github.com/ncb000gt/node-cron) - Package to create scheduled tasks;
+	* [parse-duration](https://github.com/jkroso/parse-duration) - Parse duration of time string;
+	* [ejs-locals](https://github.com/randometc/ejs-locals) - Filters and Front-end parsing;
+	* [html-minifier](https://github.com/ncb000gt/node.bcrypt.js) - HTML Minification;
 * [MongoDB](http://mongodb.org/) - An open-source NoSQL database;
 
 #### Tools
