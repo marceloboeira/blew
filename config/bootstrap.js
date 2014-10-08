@@ -15,5 +15,5 @@ module.exports.bootstrap = function(cb) {
    *
    * @see https://github.com/vimia/blew/issues/65
    */
-  sails.config.cron.start(sails);
+  CronService.init();
 };

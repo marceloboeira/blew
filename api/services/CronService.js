@@ -1,0 +1,92 @@
+/** 
+ * CronJobs Setup
+ *
+ * @see https://github.com/vimia/blew/issues/65
+ */
+var cron = require('cron');
+var _ = require('lodash');
+
+module.exports = {
+
+	/** 
+   * Init CronService
+   *
+   * @see https://github.com/vimia/blew/issues/65
+   */
+	init: function() {
+		CronService.inject();
+		_.forEach(CronService._jobs, function(job, id) {
+				job.stop();
+				job.start();
+		});
+	},
+
+	/** 
+   * Injecting CronJobs Live time
+   *
+   * @see https://github.com/vimia/blew/issues/73
+   */
+	inject: function(){
+		_.forEach(CronService.jobs, function(job, id) {
+				CronService._jobs[id] = cron.job(job.rule, job._); 
+		});
+	},
+
+	/** 
+   * Injecting CronJobs Live time
+   *
+   * @see https://github.com/vimia/blew/issues/73
+   * @param id - Job ID
+   * @param rule - Job rule
+   * @param job - Job itself
+   * @param autostart - AutoStart it?
+   */
+	add: function(id, rule, job, autostart) {
+		var c = cron.job(rule, job);
+		CronService._jobs[id] = c;
+		if (autostart == true) { 
+			c.start();
+		}
+	},
+
+	/** 
+	 * Start a cached job by its id
+ 	 *
+	 * @id job id
+	 */
+	start: function(id) {
+		CronService._jobs[id].start();
+	},
+
+	/** 
+	 * Stop a cached job by its id
+ 	 *
+	 * @id job id
+	 */
+	stop: function(id) {
+		CronService._jobs[id].stop();
+	},
+
+	/** 
+	 * Stop a cached job by its id
+ 	 *
+	 * @id job id
+	 */
+	restart: function(id) {
+		CronService._jobs[id].restart();
+	},
+
+	// Cron Objects Cache
+	_jobs: {
+
+	},
+	
+	// Default "Global" Jobs
+	jobs: {
+		"example":{	rule: "*/3 * * * * *",
+								_: function() {
+									console.log("Example cron job");
+								}
+		}	
+	}
+}
