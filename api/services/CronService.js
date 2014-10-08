@@ -16,8 +16,7 @@ module.exports = {
 	init: function() {
 		CronService.inject();
 		_.forEach(CronService._jobs, function(job, id) {
-				job.stop();
-				job.start();
+				job.restart();
 		});
 	},
 
@@ -55,7 +54,7 @@ module.exports = {
 	 * @id job id
 	 */
 	start: function(id) {
-		CronService._jobs[id].start();
+		return CronService._jobs[id].start();
 	},
 
 	/** 
@@ -64,7 +63,7 @@ module.exports = {
 	 * @id job id
 	 */
 	stop: function(id) {
-		CronService._jobs[id].stop();
+		return CronService._jobs[id].stop();
 	},
 
 	/** 
@@ -73,20 +72,28 @@ module.exports = {
 	 * @id job id
 	 */
 	restart: function(id) {
-		CronService._jobs[id].restart();
+		return CronService._jobs[id].restart();
+	},
+
+	/** 
+	 * Get a cached job by its id
+ 	 *
+	 * @id job id
+	 */
+	get: function(id) {
+		return CronService._jobs[id];
 	},
 
 	// Cron Objects Cache
-	_jobs: {
-
-	},
+	_jobs: { },
 	
 	// Default "Global" Jobs
 	jobs: {
-		"example":{	rule: "*/3 * * * * *",
-								_: function() {
-									console.log("Example cron job");
-								}
+		"example":{	
+			rule: "*/3 * * * * *",
+			_: function() {
+				console.log("Example cron job");
+			}
 		}	
 	}
 }
