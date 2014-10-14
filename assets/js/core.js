@@ -1,5 +1,7 @@
 $(function(){
+	
 	mixpanel.track("page-load");	
+	
 	/** 
 	 * Pjax to load only what you need
 	 * 	
@@ -7,6 +9,7 @@ $(function(){
 	 */
 	var Global = {
 		  pjax: {
+		  	isActive: false,
 		  	options: {
 		  		timeout: 10000, // Prevent redirects ...
 		  		replace: true
@@ -30,43 +33,40 @@ $(function(){
 	var pjax = Global.pjax;
 	var $pjax = Global.pjax.$;
 
-	$(document).pjax(pjax.caller, pjax.container, pjax.options);
-	$(document).pjax(pjax.modalCaller, pjax.modalContainer, pjax.options);
+	if (pjax.isActive) {
+		$(document).pjax(pjax.caller, pjax.container, pjax.options);
+		$(document).pjax(pjax.modalCaller, pjax.modalContainer, pjax.options);
 
-	$(document).on('pjax:send', function() {
-  	// Save history && Clear modal content
-  	pjax.history.push(location.href);
-  	$pjax.modalContainer.empty();
+		$(document).on('pjax:send', function() {
+	  	// Save history && Clear modal content
+	  	pjax.history.push(location.href);
+	  	$pjax.modalContainer.empty();
 
-  	mixpanel.track("pjax:send");
-	});
-	
-	$(document).on('pjax:complete', function(xhr, textStatus, options) {		
-  	
-  	// Make update pjax content needs after it loads
-  	modalLiveUpdate();
-  	momentLiveUpdate();
-  	highlightLiveUpdate();
-  	analyticsLiveUpdate();
-  	mixpanel.track("pjax:complete");
-  });
+	  	mixpanel.track("pjax:send");
+		});
+		
+		$(document).on('pjax:complete', function(xhr, textStatus, options) {		
+	  	
+	  	// Make update pjax content needs after it loads
+	  	modalLiveUpdate();
+	  	momentLiveUpdate();
+	  	highlightLiveUpdate();
+	  	analyticsLiveUpdate();
+	  	mixpanel.track("pjax:complete");
+	  });
 
-	$(document).on('pjax:end', function(xhr, options) {
-		//keep
-		mixpanel.track("pjax:end");
-  });
+		$(document).on('pjax:end', function(xhr, options) {
+			mixpanel.track("pjax:end");
+	  });
 
-	$(document).on('pjax:timeout', function(xhr, options){
-		//keep
-		mixpanel.track("pjax:timeout");
-	});
+		$(document).on('pjax:timeout', function(xhr, options){
+			mixpanel.track("pjax:timeout");
+		});
 
-  $(document).on('pjax:error', function(xhr, textStatus, error, options) {
-		//keep
-		mixpanel.track("pjax:error");
-  });
-	
-
+	  $(document).on('pjax:error', function(xhr, textStatus, error, options) {
+			mixpanel.track("pjax:error");
+	  });
+	}
 
 	/** 
 	 * Highlight.js to make code looks pretty 
@@ -93,7 +93,6 @@ $(function(){
 	};
 	momentLiveUpdate();
 	setInterval(momentLiveUpdate, 60000);
-
 
 	/** 
 	 * Make PJAX work with bootstrap modals
@@ -125,8 +124,6 @@ $(function(){
 	};
 	modalLiveUpdate();
 
-
-	
 	/** 
 	 * Make PJAX work with GA.js
 	 * 	
