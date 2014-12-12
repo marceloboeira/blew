@@ -38,6 +38,7 @@ See our [issues](http://github.com/vimia/blew/issues) and feel free to open a pu
 ### :clap: We Use / Thanks to
 
 #### Front-end
+* [Angular](https://angularjs.org) - Yeap, planning it.
 * [bower](https://github.com/bower/bower) - Front-end solution for packages;
 * [jQuery](http://jquery.com) - Powerful JavaScript framework;
 	* [jQuery.pjax](https://github.com/defunkt/jquery-pjax) - jQuery plugin that uses ajax and pushState to deliver a fast browsing;
