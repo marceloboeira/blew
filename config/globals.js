@@ -3,7 +3,7 @@ module.exports.globals = {
 	async: true,
 	sails: true,
 	services: true,
-	models: true
+	models: true,
 
 	baseUrl: process.env.BASE_URL ||  'http://blew.io',
 	baseHost: process.env.BASE_HOST ||  'blew.io',

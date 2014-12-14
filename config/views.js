@@ -10,7 +10,7 @@ var parser = function(path, options, cb) {
     options.locals = options.locals || {};
     
     // Override the layout file
-    options.locals._layoutFile = '/layout/public.ejs';
+    options.locals._layoutFile = '/layouts/public.ejs';
     ejs(path, options, function(err, str){
       str = minify(str,{collapseWhitespace: true, conservativeCollapse: true, removeComments: true, collapseBooleanAttributes: true, minifyJS: true, minifyCSS: true, minifyURLs: true });
       return cb(err, str);
