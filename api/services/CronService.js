@@ -8,7 +8,7 @@ var _ = require('lodash');
 
 module.exports = {
 
-	/** 
+  /** 
    * Init CronService
    *
    * @see https://github.com/vimia/blew/issues/65
@@ -16,7 +16,7 @@ module.exports = {
 	init: function() {
 		CronService.inject();
 		_.forEach(CronService._jobs, function(job, id) {
-				job.restart();
+			//job.restart();
 		});
 	},
 
