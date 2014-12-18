@@ -1,5 +1,5 @@
 module.exports = function(grunt) {
-  grunt.config.set('protractor', 
+  grunt.config.set('protractor', { 
     options: {
         configFile: "node_modules/protractor/referenceConf.js", // Default config file
             keepAlive: false, // If false, the grunt process stops when the test fails.
