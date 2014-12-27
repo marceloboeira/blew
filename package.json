@@ -1,10 +1,6 @@
 {
-  "name": "blew.io",
-  "private": true,
-  "version": "0.0.0",
-  "description": "Sails Core",
-  "keywords": [],
   "dependencies": {
+    "grunt-bower-task": "^0.3.4",
     "bcrypt": "~0.7.8",
     "blew": "*",
     "cron": "^1.0.5",
@@ -41,10 +37,15 @@
     "rc": "~0.3.3",
     "sails": "~0.10.5",
     "sails-disk": "~0.10.0",
-    "sails-generate-scaffold": "0.0.5",
+    "sails-generate-bower": "0.0.2",    
     "sails-mongo": "~0.10.0-rc5",
     "sails-postgresql": "~0.10.0-rc4"
   },
+  "name": "blew.io",
+  "private": true,
+  "version": "0.0.0",
+  "description": "Sails Core",
+  "keclwords": [],
   "scripts": {
     "start": "node app.js --prod",
     "debug": "node debug app.js"

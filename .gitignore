@@ -1,6 +1,8 @@
 config/local.js
 node_modules
 bower_components
+assets/vendor/*
+assets/components/*
 .tmp
 dump.rdb
 lib-cov

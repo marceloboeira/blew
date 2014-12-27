@@ -15,6 +15,10 @@
 // (if you're using LESS with the built-in default config, you'll want
 //  to change `assets/styles/importer.less` instead.)
 var cssFilesToInject = [
+  // Yeap, it`s not SO SIMPLE, so we need to specify the css files/folders inside of the component to prevent dirty stuff, so lets do it!
+  'components/bootstrap/dist/bootstrap/css/*.min.css',
+  'components/font-awesome/css/*.min.css',
+  'components/highlight/src/styles/github.css',
   'styles/**/*.css'
 ];
 
@@ -22,8 +26,13 @@ var cssFilesToInject = [
 // Client-side javascript files to inject in order
 // (uses Grunt-style wildcard/glob/splat expressions)
 var jsFilesToInject = [
-  // All of the rest of your client-side js files
-  // will be injected here in no particular order.
+  'components/jquery/dist/*.min.js',
+  'components/jquery-pjax/jquery.pjax.min.js',
+  'components/bootstrap/dist/bootstrap/js/*.min.js',
+  'components/momentjs/min/moment-with-locales.min.js',
+  //'components/highlight/src/highlight.js',
+  'components/highcharts/highcharts-all.js',
+  'components/pace/pace.min.js',
   'js/sails.io.js',
   'js/library.js',
   'js/**/*.js'
