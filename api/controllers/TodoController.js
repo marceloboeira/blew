@@ -1,10 +1,17 @@
 /**
- *
- *
- *
+ * Todo Controller
+ * 
+ * @type {Controller}
  */
 module.exports = {
 
+    /**
+     * Find a todo
+     * 
+     * @param  {[type]}
+     * @param  {[type]}
+     * @return {[type]}
+     */
     find: function(req, res) {
         Todo.getAll()
             .spread(function(models) {

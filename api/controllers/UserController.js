@@ -1,64 +1,54 @@
+/**
+ * User Controller
+ * 
+ * @type {Controller}
+ */
 module.exports = {
-	getAll: function(req, res) {
-		User.getAll()
-		.spread(function(models) {
 
-                res.json({data:models});
-		})
-		.fail(function(err) {
-			// An error occured
-		});
-	},
+  /**
+   * Get All Users
+   * 
+   * @return {json}
+   */
+  getAll: function(req, res) {
+    User.getAll().spread(function(users) {
+      return res.json({data:users});
+    }).fail(function(err) {
+      return res.send(404);
+  	});
+  },
 
-
-	getOne: function(req, res) {
-		User.getOne(req.param('id'))
-		.spread(function(model) {
-                console.log('in getOne user', model)
-			res.json(model);
-		})
-		.fail(function(err) {
-			// res.send(404);
-		});
-	},
-
-/*
-model for roles
-switch (project.role) {
- case -3:
- project.roleText = "Administrator";
- break;
- case -2:
- project.roleText = "Manager (Primary)";
- break;
- case -1:
- project.roleText = "Manager";
- break;
- case 0:
- project.roleText = "Viewer";
- break;
- case 1:
- project.roleText = "User";
- break;
- }*/
-	create: function (req, res) {
-        console.log(req.params.all);
-		var model = {
-			username: req.param('username'),
-			email: req.param('email'),
-			first_name: req.param('first_name'),
-            role: req.param('role')
-		};
-
-		User.create(model)
-		.exec(function(err, model) {
-			if (err) {
-				return console.log(err);
-			}
-			else {
-				User.publishCreate(model.toJSON());
-				res.json(model);
-			}
-		});
-	}
+  /**
+   * Get a user based on his id
+   *
+   * @param  {id} 
+   * @return {json}
+   */
+  getOne: function(req, res) {
+    User.getOne(req.param('id')).spread(function(data) {
+	  return res.json(data);
+  	}).fail(function(err) {
+      return res.send(404);
+  	});
+  },
+  
+  /**
+   * Create a user
+   * 
+   * @param  {[username]}
+   * @param  {[type]}
+   * @return {[type]}
+   */
+  create: function (req, res) {
+    var data = { username: req.param('username'),
+				 email: req.param('email'),
+				 first_name: req.param('first_name'),
+        	     role: req.param('role') };
+	User.create(model).exec(function(err, data) {
+	  if (err) return res.send(404);
+	  
+	  User.publishCreate(model.toJSON());
+	  res.json(model);
+	});
+  }
 };
