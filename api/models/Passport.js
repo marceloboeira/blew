@@ -14,7 +14,7 @@ var bcrypt = require('bcrypt');
  * weight as possible as the application only needs to serialize and deserialize
  * the user, but not the authentication data, to and from the session.
  */
-var Passport = {
+module.exports = {
 
   attributes: {
 
@@ -102,5 +102,3 @@ var Passport = {
     }
   }
 };
-
-module.exports = Passport;

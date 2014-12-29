@@ -8,50 +8,61 @@
 
 module.exports = {
 
+  /**
+   * [attributes description]
+   * @type {Object}
+   */
   attributes: {
   	title: {
-      type: 'string',
+      type: 'String',
       required: true
     },
     isComplete: {
-      type: 'boolean',
+      type: 'Boolean',
       defaultsTo: false
     },
-      status:{
-          type: 'string',
-          required: true
-      },
-
-      user: {
-          model: 'user'
-      }
+    status:{
+      type: 'String',
+      required: true
+    },
+    user: {
+      model: 'User'
+    }
+  },
+  
+  /**
+   * [afterCreate description]
+   * @param  {[type]}
+   * @param  {Function}
+   * @return {[type]}
+   */
+  afterCreate: function (todo, next) {
+    // set message.user = to appropriate user model
+    User.getOne(todo.user)
+        .spread(function(user) {
+          todo.user = user;
+          next(null, todo);
+        });
   },
 
-    afterCreate: function (todo, next) {
-        // set message.user = to appropriate user model
-        User.getOne(todo.user)
-            .spread(function(user) {
-                todo.user = user;
-                next(null, todo);
-            });
-    },
-
-    getAll: function() {
-        return Todo.find()
-            // TODO: sort by createdAt DESC does not work here
-            //.sort('title')
-            .populate('user')
-            .then(function (models) {
-                return [models];
-            });
-    },
-    getOne: function(id) {
-    return Todo.findOne(id)
-        .populate('user')
-        .then(function (model) {
-            // you have the option to do something with the model here if needed, before returning it to the controller
-            return [model];
-        });
-}
-
+  /**
+   * [getAll description]
+   * @return {[type]}
+   */
+  getAll: function() {
+    return Todo.find().populate('user').then(function (models) {
+      return [models];
+    });
+  },
+  
+  /**
+   * [getOne description]
+   * @param  {[type]}
+   * @return {[type]}
+   */
+  getOne: function(id) {
+    return Todo.findOne(id).populate('user').then(function (model) {
+      return [model];
+    });
+  }
 };

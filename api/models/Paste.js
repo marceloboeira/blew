@@ -1,40 +1,45 @@
-
-var detectLanguage = require('language-classifier');
-
+/**
+ * [exports description]
+ * @type {Object}
+ */
 module.exports = {
 
+  /**
+   * [attributes description]
+   * @type {Object}
+   */
   attributes: {
   	
   	name:{
-      type: 'string',
+      type: 'String',
       required: true 
     },
 
     language:{
-      type: 'string',
+      type: 'String',
       required: false,
       defaultsTo: null  
     },
 
   	owner:{
-      model:'user',
+      model:'User',
       required: true
     },
 
     private:{
-    	type:'boolean',
+    	type:'Boolean',
     	required:true,
     	defaultsTo: false
     },
 
     content:{
-    	type:'text',
+    	type:'Text',
     	required:true,
     	defaultsTo: null
     },
 
     expiresAt:{
-      type:'date',
+      type:'Date',
       required:false,
       defaultsTo: null
     },
@@ -89,6 +94,12 @@ module.exports = {
       return (this.owner.id === id);
     },
 
+    /**
+     * Injecting fake stuff
+     * 
+     * @override
+     * @return {[type]}
+     */
     toJSON: function() {
       var obj = this.toObject();
       obj.link = obj.getLink(true);
@@ -97,6 +108,12 @@ module.exports = {
 	
   },
 
+  /**
+   * [beforeValidate description]
+   * @param  {[type]}
+   * @param  {Function}
+   * @return {[type]}
+   */
   beforeValidate: function(attrs, cb) {
     // @see https://github.com/vimia/blew/issues/3
     attrs.expiresAt = (attrs.expiresAt !== null) ? FilterService.durationToDate(attrs.expiresAt) : null;
@@ -104,6 +121,12 @@ module.exports = {
     return cb();
   },
 
+  /**
+   * [beforeCreate description]
+   * @param  {[type]}
+   * @param  {Function}
+   * @return {[type]}
+   */
   beforeCreate: function(attrs, cb){
     attrs.language = detectLanguage(attrs.content) || attrs.language || 'Unknow';
   

@@ -1,3 +1,7 @@
+/**
+ * Including NewRelic module before everything else
+ * 
+ */
 require('newrelic');
 
 /**
@@ -49,7 +53,6 @@ try {
 		rc = function () { return {}; };
 	}
 }
-
 
 // Start server
 sails.lift(rc('sails'));
