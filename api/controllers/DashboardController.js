@@ -1,10 +1,8 @@
 /**
  * DashboardController
  *
- * @description :: Server-side logic for managing dashboards
- * @help        :: See http://links.sailsjs.org/docs/controllers
+ * @type {Controller}
  */
-
 module.exports = {
 	
   index: function (req, res) {

@@ -1,4 +1,3 @@
-
 module.exports.globals = {
 	_: true,
 	async: true,
@@ -12,5 +11,4 @@ module.exports.globals = {
 
 	GA_ID: process.env.GA_ID || null,
 	MIXPANEL_ID: process.env.MIXPANEL_ID || null,
-
 };

@@ -1,61 +1,54 @@
-
+/**
+ * User Controller
+ * 
+ * @type {Controller}
+ */
 module.exports = {
 
-	me: function (req, res) {
-		return res.json({user: req.user});
-	},
-	view: function (req, res) {
-		var username = req.param('username');		
-		User.findOne({id:username}).populate('keys').populate('pastes').exec(function(err, user) {
-				if (err || !user) {
-					User.findOne({username:username}).populate('keys').populate('pastes').exec(function(err, user) {
-						if (err || !user) return res.notFound();
-						return res.view({user: user,
-													 title: res.__("%s's Profile", user.name)});
-					});
-				}
-				else {
-					return res.view({user: user,
-													 title: res.__("%s's Profile", user.name)});
-				}
-		});
-	},
-	
-	'change-password': function(req, res) {
-		return res.view({title: res.__("Change Password")});	
-	},
+  /**
+   * Get All Users
+   * 
+   * @return {json}
+   */
+  getAll: function(req, res) {
+    User.getAll().spread(function(users) {
+      return res.json({data:users});
+    }).fail(function(err) {
+      return res.send(404);
+  	});
+  },
 
-	'change-password-post': function(req, res) {
-		var password = req.param('newPassword'),
-		    confirmation = req.param('confirmation'),
-				response = {
-					error: true,
-					erroData: null,
-					message: res.__('Invalid data')
-				};	
-		if (password !== confirmation) {
-		  response.error = true;
-			response.message = res.__('Password and confirmation should be equal');
-			return res.json(response);
-		}	
-		else {
-			User.findOne(req.user.id).exec(function(err, user){
-				user.changePassword(password,function(err, u){
-					if (err) {
-						response.error = true;
-						response.message = res.__('Database error');
-						response.errorData = err;
-					}
-					else {
-						response.error = false;
-						response.message = res.__('Done!');
-					}
-					
-					return res.json(response);
-				});
-			})
-		}
-	}
+  /**
+   * Get a user based on his id
+   *
+   * @param  {id} 
+   * @return {json}
+   */
+  getOne: function(req, res) {
+    User.getOne(req.param('id')).spread(function(data) {
+	  return res.json(data);
+  	}).fail(function(err) {
+      return res.send(404);
+  	});
+  },
+  
+  /**
+   * Create a user
+   * 
+   * @param  {[username]}
+   * @param  {[type]}
+   * @return {[type]}
+   */
+  create: function (req, res) {
+    var data = { username: req.param('username'),
+				 email: req.param('email'),
+				 first_name: req.param('first_name'),
+        	     role: req.param('role') };
+	User.create(model).exec(function(err, data) {
+	  if (err) return res.send(404);
+	  
+	  User.publishCreate(model.toJSON());
+	  res.json(model);
+	});
+  }
 };
-
-

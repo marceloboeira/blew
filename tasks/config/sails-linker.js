@@ -51,9 +51,9 @@ module.exports = function(grunt) {
 				appRoot: '.tmp/public'
 			},
 			files: {
-				'.tmp/public/**/*.html': ['.tmp/public/min/core.min.js'],
-				'views/**/*.html': ['.tmp/public/min/core.min.js'],
-				'views/**/*.ejs': ['.tmp/public/min/core.min.js']
+				'.tmp/public/**/*.html': ['.tmp/public/min/production.js'],
+				'views/**/*.html': ['.tmp/public/min/production.js'],
+				'views/**/*.ejs': ['.tmp/public/min/production.js']
 			}
 		},
 
@@ -66,9 +66,9 @@ module.exports = function(grunt) {
 				relative: true
 			},
 			files: {
-				'.tmp/public/**/*.html': ['.tmp/public/min/core.min.js'],
-				'views/**/*.html': ['.tmp/public/min/core.min.js'],
-				'views/**/*.ejs': ['.tmp/public/min/core.min.js']
+				'.tmp/public/**/*.html': ['.tmp/public/min/production.js'],
+				'views/**/*.html': ['.tmp/public/min/production.js'],
+				'views/**/*.ejs': ['.tmp/public/min/production.js']
 			}
 		},
 
@@ -111,9 +111,9 @@ module.exports = function(grunt) {
 				appRoot: '.tmp/public'
 			},
 			files: {
-				'.tmp/public/index.html': ['.tmp/public/min/core.min.css'],
-				'views/**/*.html': ['.tmp/public/min/core.min.css'],
-				'views/**/*.ejs': ['.tmp/public/min/core.min.css']
+				'.tmp/public/index.html': ['.tmp/public/min/production.css'],
+				'views/**/*.html': ['.tmp/public/min/production.css'],
+				'views/**/*.ejs': ['.tmp/public/min/production.css']
 			}
 		},
 
@@ -126,13 +126,13 @@ module.exports = function(grunt) {
 				relative: true
 			},
 			files: {
-				'.tmp/public/index.html': ['.tmp/public/min/core.min.css'],
-				'views/**/*.html': ['.tmp/public/min/core.min.css'],
-				'views/**/*.ejs': ['.tmp/public/min/core.min.css']
+				'.tmp/public/index.html': ['.tmp/public/min/production.css'],
+				'views/**/*.html': ['.tmp/public/min/production.css'],
+				'views/**/*.ejs': ['.tmp/public/min/production.css']
 			}
 		},
 
-		// Bring in JST template object
+		// Bring in html2js/angular template cache template object
 		devTpl: {
 			options: {
 				startTag: '<!--TEMPLATES-->',
@@ -141,124 +141,9 @@ module.exports = function(grunt) {
 				appRoot: '.tmp/public'
 			},
 			files: {
-				'.tmp/public/index.html': ['.tmp/public/jst.js'],
-				'views/**/*.html': ['.tmp/public/jst.js'],
-				'views/**/*.ejs': ['.tmp/public/jst.js']
-			}
-		},
-
-		devJsJade: {
-			options: {
-				startTag: '// SCRIPTS',
-				endTag: '// SCRIPTS END',
-				fileTmpl: 'script(src="%s")',
-				appRoot: '.tmp/public'
-			},
-			files: {
-				'views/**/*.jade': require('../pipeline').jsFilesToInject
-			}
-		},
-
-		devJsRelativeJade: {
-			options: {
-				startTag: '// SCRIPTS',
-				endTag: '// SCRIPTS END',
-				fileTmpl: 'script(src="%s")',
-				appRoot: '.tmp/public',
-				relative: true
-			},
-			files: {
-				'views/**/*.jade': require('../pipeline').jsFilesToInject
-			}
-		},
-
-		prodJsJade: {
-			options: {
-				startTag: '// SCRIPTS',
-				endTag: '// SCRIPTS END',
-				fileTmpl: 'script(src="%s")',
-				appRoot: '.tmp/public'
-			},
-			files: {
-				'views/**/*.jade': ['.tmp/public/min/core.min.js']
-			}
-		},
-
-		prodJsRelativeJade: {
-			options: {
-				startTag: '// SCRIPTS',
-				endTag: '// SCRIPTS END',
-				fileTmpl: 'script(src="%s")',
-				appRoot: '.tmp/public',
-				relative: true
-			},
-			files: {
-				'views/**/*.jade': ['.tmp/public/min/core.min.js']
-			}
-		},
-
-		devStylesJade: {
-			options: {
-				startTag: '// STYLES',
-				endTag: '// STYLES END',
-				fileTmpl: 'link(rel="stylesheet", href="%s")',
-				appRoot: '.tmp/public'
-			},
-
-			files: {
-				'views/**/*.jade': require('../pipeline').cssFilesToInject
-			}
-		},
-
-		devStylesRelativeJade: {
-			options: {
-				startTag: '// STYLES',
-				endTag: '// STYLES END',
-				fileTmpl: 'link(rel="stylesheet", href="%s")',
-				appRoot: '.tmp/public',
-				relative: true
-			},
-
-			files: {
-				'views/**/*.jade': require('../pipeline').cssFilesToInject
-			}
-		},
-
-		prodStylesJade: {
-			options: {
-				startTag: '// STYLES',
-				endTag: '// STYLES END',
-				fileTmpl: 'link(rel="stylesheet", href="%s")',
-				appRoot: '.tmp/public'
-			},
-			files: {
-				'views/**/*.jade': ['.tmp/public/min/core.min.css']
-			}
-		},
-
-		prodStylesRelativeJade: {
-			options: {
-				startTag: '// STYLES',
-				endTag: '// STYLES END',
-				fileTmpl: 'link(rel="stylesheet", href="%s")',
-				appRoot: '.tmp/public',
-				relative: true
-			},
-			files: {
-				'views/**/*.jade': ['.tmp/public/min/core.min.css']
-			}
-		},
-
-		// Bring in JST template object
-		devTplJade: {
-			options: {
-				startTag: '// TEMPLATES',
-				endTag: '// TEMPLATES END',
-				fileTmpl: 'script(type="text/javascript", src="%s")',
-				appRoot: '.tmp/public'
-			},
-			files: {
-				'views/**/*.jade': ['.tmp/public/jst.js']
+				'.tmp/public/index.html': ['.tmp/public/templates.js'],
+				'views/**/*.html': ['.tmp/public/templates.js'],
+				'views/**/*.ejs': ['.tmp/public/templates.js']
 			}
 		}
 	});
