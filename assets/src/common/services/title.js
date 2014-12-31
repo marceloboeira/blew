@@ -1,8 +1,10 @@
+/**
+ * Angular Title Service
+ */
 angular.module('services.title', [])
-
 .factory('titleService',['$document', function($document) {
   var suffix, title;
-  suffix = title = " - MEANS Seed Project";
+  suffix = title = " ";
 
   return {
     setSuffix: function(s) {

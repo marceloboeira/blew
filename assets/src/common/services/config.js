@@ -1,16 +1,8 @@
-angular.module( 'services.config', ['lodash'])
-
-.service('config',['lodash', function(lodash) {
-
-	// private vars here if needed
-
+angular.module( 'services.config', ['lodash']).service('config',['lodash', function(lodash) {
 	return {
-		siteName: 'MEANS Seed',
-		// no trailing slash!
+		siteName: 'BLEW',
 		siteUrl: '/',
 		apiUrl: '/api',
-
 		currentUser: false
 	};
-
 }]);
