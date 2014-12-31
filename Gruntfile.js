@@ -14,7 +14,6 @@
 
 module.exports = function(grunt) {
 
-
 	// Load the include-all library in order to require all of our grunt
 	// configurations and task registrations dynamically.
 	var includeAll;
@@ -35,7 +34,6 @@ module.exports = function(grunt) {
 			return;
 		}
 	}
-
 
 	/**
 	 * Loads Grunt configuration modules from the specified
@@ -62,9 +60,6 @@ module.exports = function(grunt) {
 		}
 	}
 
-
-
-
 	// Load task functions
 	var taskConfigurations = loadTasks('./tasks/config'),
 		registerDefinitions = loadTasks('./tasks/register');
@@ -77,5 +72,4 @@ module.exports = function(grunt) {
 	// Run task functions to configure Grunt.
 	invokeConfigFn(taskConfigurations);
 	invokeConfigFn(registerDefinitions);
-
 };

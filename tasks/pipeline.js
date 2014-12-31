@@ -43,9 +43,9 @@ var jsFilesToInject = [
     'src/**/*.js'
 
 ];
+
 var imagesFilesToInject = [
     'images/**/*'
-
 ];
 
 module.exports.jsFilesToInjectNoPathChange = jsFilesToInject;
@@ -82,9 +82,9 @@ module.exports.templateFilesToInject = templateFilesToInject.map(function(path) 
 });
 
 module.exports.imagesFilesToInject = imagesFilesToInject.map(function(path) {
-    return   path;
+    return path;
 });
 
 module.exports.fontFilesToInject = fontFilesToInject.map(function(path) {
-    return   path;
+    return path;
 });
