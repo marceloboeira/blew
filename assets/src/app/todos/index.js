@@ -1,5 +1,5 @@
-angular.module( 'sailng.todos', [
-])
+
+angular.module( 'sailng.todos', [])
     .config( ['$stateProvider',function config( $stateProvider ) {
         $stateProvider.state( 'todos', {
 		url: '/todos',
@@ -12,14 +12,14 @@ angular.module( 'sailng.todos', [
 		data:{ pageTitle: 'Todo' }
 	});
 }])
+.controller( 'TodoCtrl',['$scope', '$sails', 'lodash', 'config', 'titleService', 'TodoModel','$filter', 'ngTableParams','$location', function TodoController( $scope, $sails, lodash, config, titleService, TodoModel,$filter, ngTableParams,$location ) {
+    $scope.newTodo = {};
+    $scope.todos = [];
+    $scope.currentUser = config.currentUser;
 
-    .controller( 'TodoCtrl',['$scope', '$sails', 'lodash', 'config', 'titleService', 'TodoModel','$filter', 'ngTableParams','$location', function TodoController( $scope, $sails, lodash, config, titleService, TodoModel,$filter, ngTableParams,$location ) {
-        $scope.newTodo = {};
-        $scope.todos = [];
-        $scope.currentUser = config.currentUser;
-        if ($scope.currentUser===undefined){
+    if ($scope.currentUser === undefined){
             $location.path('/');
-        }
+    }
 
         $scope.stats = [
             {name: 'null', value: 0},

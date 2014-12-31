@@ -1,8 +1,6 @@
-angular.module( 'sailng.about', [
-])
-
-    .config( ['$stateProvider',function config( $stateProvider ) {
-        $stateProvider.state( 'about', {
+angular.module( 'sailng.about', [])
+	.config( ['$stateProvider',function config( $stateProvider ) {
+   $stateProvider.state( 'about', {
 		url: '/about',
 		views: {
 			"main": {
