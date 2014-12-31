@@ -10,7 +10,6 @@ lib-cov
 *.log
 *.out
 *.pid
-npm-debug.log
 *~
 *#
 .DS_STORE
@@ -19,4 +18,3 @@ nbproject
 .idea
 .node_history
 .codeclimate
-newrelic_agent.log
