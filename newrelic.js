@@ -14,6 +14,6 @@ exports.config = {
    */
   license_key : process.env.NEWRELIC_KEY || 'app_key',
   logging : {
-    level : 'trace'
+    level : 'verbose'
   }
 };
