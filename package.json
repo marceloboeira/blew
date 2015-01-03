@@ -63,7 +63,7 @@
     "type": "git",
     "url": "git@github.com:vimia/blew.git"
   },
-  "author": "marceloboeira",
+  "author": "Marcelo Boeira <me@marceloboeira.com>",
   "license": "BSD-2-Clause",
   "devDependencies": {
     "mocha": "^1.21.3",
