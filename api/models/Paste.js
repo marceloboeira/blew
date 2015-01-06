@@ -9,16 +9,16 @@ module.exports = {
    * @type {Object}
    */
   attributes: {
-  	
+
   	name:{
       type: 'String',
-      required: true 
+      required: true
     },
 
     language:{
       type: 'String',
       required: false,
-      defaultsTo: null  
+      defaultsTo: null
     },
 
   	owner:{
@@ -44,9 +44,9 @@ module.exports = {
       defaultsTo: null
     },
 
-    /** 
+    /**
      * Get the Paste Link, ...
-     * 
+     *
      * @param full - With the 'http://blew.io/'
      * @return 'http://blew.io/p/5422d5f8844e460b00ac36fb'
      */
@@ -54,16 +54,16 @@ module.exports = {
       return ((f === true) ? sails.config.globals.baseUrl : "" ) + sails.config.routes.paste + this.id;
     },
 
-    /** 
+    /**
      * Verify if paste is Private
-     * 
+     *
      * @return Boolean
      */
     isPrivate: function() {
       return (this.private === true);
     },
 
-    /** 
+    /**
      * Verify if the paste expires
      *
      * @see https://github.com/vimia/blew/issues/3
@@ -73,7 +73,7 @@ module.exports = {
       return (this.expiresAt !== null);
     },
 
-    /** 
+    /**
      * Verify if the paste is expired
      *
      * @see https://github.com/vimia/blew/issues/3
@@ -83,9 +83,9 @@ module.exports = {
       return (this.itExpires() ? (new Date().getTime() > new Date(this.expiresAt).getTime()) : false);
     },
 
-    /** 
+    /**
      * Verify if the given ID is the owner.
-     * 
+     *
      * @param u - User Object or User Id
      * @return Boolean
      */
@@ -96,7 +96,7 @@ module.exports = {
 
     /**
      * Injecting fake stuff
-     * 
+     *
      * @override
      * @return {[type]}
      */
@@ -105,7 +105,7 @@ module.exports = {
       obj.link = obj.getLink(true);
       return obj;
     }
-	
+
   },
 
   /**
@@ -128,8 +128,8 @@ module.exports = {
    * @return {[type]}
    */
   beforeCreate: function(attrs, cb){
-    attrs.language = detectLanguage(attrs.content) || attrs.language || 'Unknow';
-  
+  	attrs.language = detectLanguage(attrs.content) || attrs.language || 'Unknow';
+
     return cb();
   }
 };
