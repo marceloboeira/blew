@@ -4,7 +4,7 @@
  * @type {Controller}
  */
 module.exports = {
-	
+
   index: function (req, res) {
     return res.view({title:res.__('Dashboard')});
   },
@@ -12,6 +12,5 @@ module.exports = {
   "getting-started": function (req, res) {
     return res.view({title:res.__('Getting Started')});
   }
-
 };
 

@@ -10,7 +10,7 @@ module.exports = {
    */
   attributes: {
 
-  	name:{
+    name:{
       type: 'String',
       required: true
     },
@@ -21,21 +21,21 @@ module.exports = {
       defaultsTo: null
     },
 
-  	owner:{
+    owner:{
       model:'User',
       required: true
     },
 
     private:{
-    	type:'Boolean',
-    	required:true,
-    	defaultsTo: false
+      type:'Boolean',
+      required:true,
+      defaultsTo: false
     },
 
     content:{
-    	type:'Text',
-    	required:true,
-    	defaultsTo: null
+      type:'Text',
+      required:true,
+      defaultsTo: null
     },
 
     expiresAt:{
@@ -128,7 +128,7 @@ module.exports = {
    * @return {[type]}
    */
   beforeCreate: function(attrs, cb){
-  	attrs.language = detectLanguage(attrs.content) || attrs.language || 'Unknow';
+    attrs.language = detectLanguage(attrs.content) || attrs.language || 'Unknow';
 
     return cb();
   }

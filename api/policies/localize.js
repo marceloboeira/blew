@@ -8,6 +8,6 @@
  */
 module.exports = function (req, res, next) {
 
-    req.locale = req.param('lang');
-    return next();
+  req.locale = req.param('lang');
+  return next();
 };

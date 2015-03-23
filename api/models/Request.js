@@ -5,29 +5,29 @@ module.exports = {
 
     requester:{
       model:'user',
-      required: false // TODO 
+      required: false // TODO
     },
 
-  	requestedAt: { 
-  		type: 'dateTime',
-  		required: true
-  	},
+    requestedAt: {
+      type: 'dateTime',
+      required: true
+    },
 
-  	time: {
-  		type: 'integer'
-  	},
+    time: {
+      type: 'integer'
+    },
 
-  	params: {
-  		type: 'text'
-  	},
+    params: {
+      type: 'text'
+    },
 
-  	responseCode: {
-  		type: 'integer'
-  	},
-    
-  	responseMessage: {
-  		type: 'text'
-  	}
+    responseCode: {
+      type: 'integer'
+    },
+
+    responseMessage: {
+      type: 'text'
+    }
   }
 };
 

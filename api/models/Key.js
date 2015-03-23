@@ -9,22 +9,22 @@ module.exports = {
       model:'user',
       required: true
     },
-  	
+
     token: {
-  		type: 'string',
+      type: 'string',
       required: true,
       unique: true
-  	},
-  	
+    },
+
     secret: {
-  		type: 'string',
+      type: 'string',
       required: true
-  	},
-    
+    },
+
     active:{
       type: 'boolean',
       required: true,
-      defaultsTo: false  
+      defaultsTo: false
     }
   }
 };

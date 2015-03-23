@@ -1,8 +1,8 @@
 /**
- * AuditController.js 
+ * AuditController.js
  *
  * @type {Controller}
  */
 module.exports = {
-	
+
 };
