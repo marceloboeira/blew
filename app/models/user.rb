@@ -5,6 +5,8 @@ class User
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :confirmable
 
+  has_many :snippets
+  
   field :email, type: String
   field :encrypted_password, type: String
   field :reset_password_token, type: String

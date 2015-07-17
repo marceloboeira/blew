@@ -5,5 +5,5 @@ RSpec.describe Snippet, type: :model do
 
   it { expect(subject).to validate_presence_of(:title) }
   it { expect(subject).to validate_presence_of(:content) }
-
+  it { expect(subject).to validate_presence_of(:creator) }
 end
