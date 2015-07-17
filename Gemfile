@@ -4,6 +4,7 @@ gem 'rails', '4.2.3'
 gem 'uglifier', '>= 1.3.0'
 
 gem 'mongoid'
+gem 'devise'
 
 group :development, :test do
   gem 'byebug'
