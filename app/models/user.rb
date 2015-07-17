@@ -18,5 +18,8 @@ class User
   field :confirmation_token, type: String
   field :confirmed_at, type: Time
   field :confirmation_sent_at, type: Time
-  field :unconfirmed_email, type: String 
+  field :unconfirmed_email, type: String
+
+  validates :email, presence: true
+
 end
