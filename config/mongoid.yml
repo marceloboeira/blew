@@ -1,0 +1,21 @@
+development:
+  sessions:
+    default:
+      database: blew_development
+      hosts:
+        - localhost:27017
+      options:
+  options:
+    use_activesupport_time_zone: true
+test:
+  sessions:
+    default:
+      database: blew_test
+      hosts:
+        - localhost:27017
+      options:
+        read: primary
+        max_retries: 1
+        retry_interval: 0
+  options:
+    use_activesupport_time_zone: true
