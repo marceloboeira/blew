@@ -23,5 +23,5 @@ class User
   field :unconfirmed_email, type: String
 
   validates :email, presence: true
-
+  
 end
